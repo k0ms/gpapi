@@ -1,14 +1,7 @@
 {
     "name": "gpapi",
     "description": "gpapi",
-    "subdomain": "gpapi",
     "version": "0.0.1-12",
-    "private": true,
-    "scripts": {
-        "predeploy": "echo This will be run before deploying the app",
-        "postdeploy": "echo This will be run after deploying the app",
-        "start": "server.js"
-    },
     "engines": {
         "node": "0.8.x"
     },

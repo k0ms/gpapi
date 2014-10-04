@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 app.use(bodyParser.json());
+var port = process.env.PORT || 3000;
 
 app.get('/users', users.findAll);
 app.get('/users/:id', users.findById);
@@ -27,5 +28,5 @@ app.get('/promos', feeds.promos);
 app.get('/tips', feeds.tips);
 app.get('/news', feeds.news);
 
-app.listen(8080);
+app.listen(port);
 console.log('Listening on port 8080...');

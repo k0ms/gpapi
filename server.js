@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 app.use(bodyParser.json());
+var port = process.env.PORT || 3000;
 
 app.get('/users', users.findAll);
 app.get('/users/:id', users.findById);
@@ -21,5 +22,5 @@ app.put('/vehicles/:id', vehicles.updateVehicles);
 app.delete('/vehicles/:id', vehicles.deleteVehicles)
 
 
-app.listen(8080);
+app.listen(port);
 console.log('Listening on port 8080...');

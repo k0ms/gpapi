@@ -24,9 +24,6 @@ app.delete('/vehicles/:id', vehicles.deleteVehicles)
 
 app.get('/feeds', feeds.findAll);
 app.get('/feeds/:id', feeds.findById);
-app.get('/promos', feeds.promos);
-app.get('/tips', feeds.tips);
-app.get('/news', feeds.news);
 
 app.listen(port);
 console.log('Listening on port 8080...');

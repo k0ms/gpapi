@@ -29,11 +29,54 @@ exports.findById = function(req, res) {
 };
  
 exports.findAll = function(req, res) {
+
+
+    var request = req.body;
+    var nPerPage = 0;
+    var pageNumber = 0;
+    var type = '';
+
+    if(JSON.stringify(request.limit) != undefined) 
+        nPerPage = JSON.stringify(request.limit);
+    if(JSON.stringify(request.page) != undefined)
+        pageNumber = JSON.stringify(request.page);
+    if(JSON.stringify(request.type) != undefined)
+        type.type = {type: JSON.stringify(request.type)+''};
+
+    console.log("type" + type);
+    console.log("pageNumber" + pageNumber);
+    console.log("nPerPage" +  nPerPage);
+    var cursor;
+
     db.collection('feeds', function(err, collection) {
-        collection.find().toArray(function(err, items) {
-            responseMsg.msg = "OK";
-            responseMsg.data = items;
-            res.send(responseMsg);
+        //collection.find().toArray(function(err, items) {
+        //    responseMsg.msg = "OK";
+        //    responseMsg.data = items;
+        //    res.send(responseMsg);
+        //});
+        if(type === '') {
+            cursor = collection.find().sort([['date_modified', -1]]);    
+        }
+        else {
+            cursor = collection.find(type).sort([['date_modified', -1]]);       
+        }
+
+        
+        cursor.skip(pageNumber > 0 ?((pageNumber-1)*nPerPage) : 0).limit(nPerPage).toArray(function(err, items){
+
+
+            if(err) {
+                responseMsg.msg = "OK";
+                responseMsg.data = err;
+                res.send(responseMsg);
+            }
+            else if(items) {
+                responseMsg.msg = "NG";
+                responseMsg.data = items;
+                res.send(responseMsg);    
+            }
+            
+
         });
     });
 };

@@ -34,14 +34,14 @@ exports.findAll = function(req, res) {
     var nPerPage = req.params.page;
     var pageNumber = req.params.limit;
     var type = req.params.type;
-
+/*
     if(JSON.stringify(request.limit) != undefined) 
         nPerPage = JSON.stringify(request.limit);
     if(JSON.stringify(request.page) != undefined)
         pageNumber = JSON.stringify(request.page);
     if(JSON.stringify(request.type) != undefined)
         type.type = {type: JSON.stringify(request.type)+''};
-
+*/
     console.log("type" + type);
     console.log("pageNumber" + pageNumber);
     console.log("nPerPage" +  nPerPage);

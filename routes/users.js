@@ -110,7 +110,7 @@ exports.authenticate = function(req, res) {
             }
             else {
                 if(item) {
-                    if(JSON.stringify(user.password )== JSON.stringify(item.password))
+                    if(JSON.stringify(user.password ) == JSON.stringify(item.password))
                     res.send({"msg":'OK', 'data': item});
                     else
                         res.send({'msg': 'NOT_AUTHORIZED'});

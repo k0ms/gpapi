@@ -30,11 +30,10 @@ exports.findById = function(req, res) {
  
 exports.findAll = function(req, res) {
 
-
-    var request = req.body;
-    var nPerPage = 0;
-    var pageNumber = 0;
-    var type = '';
+    var request = req.params;
+    var nPerPage = req.params.page;
+    var pageNumber = req.params.limit;
+    var type = req.params.type;
 
     if(JSON.stringify(request.limit) != undefined) 
         nPerPage = JSON.stringify(request.limit);

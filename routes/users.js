@@ -40,21 +40,46 @@ exports.findAll = function(req, res) {
  
 exports.addUsers = function(req, res) {
     var users = req.body;
+    var isExisting = false;
     console.log('Adding users: ' + JSON.stringify(users));
     console.log('password users: '+ JSON.stringify(users.password));
     users._id = new ObjectId().toHexString();
 
-    users.password = crypto.createHash('md5').update( JSON.stringify(users.password) ).digest("hex");
-    db.collection('users', function(err, collection) {
-        collection.insert(users, {safe:true}, function(err, result) {
-            if (err) {
-                res.send({'error':'An error has occurred'});
-            } else {
-                console.log('Success: ' + JSON.stringify(result[0]));
-                res.send(result[0]);
+    //add processing for social media
+
+    //find if email is existing 
+    db.collection('users', function(err,collection) {
+        collection.findOne({'email': users.email}, function(err, item){
+            if(err) {
+                isExisting = false;
+            }
+            else if(item) {
+                if(item.email != '') {
+                    isExsiting = true;
+                }
+
             }
         });
     });
+    if(!isExisting) {
+        users.password = crypto.createHash('md5').update( JSON.stringify(users.password) ).digest("hex");
+        db.collection('users', function(err, collection) {
+            collection.insert(users, {safe:true}, function(err, result) {
+                if (err) {
+                    res.send({'error':'An error has occurred'});
+                } else {
+                    console.log('Success: ' + JSON.stringify(result[0]));
+                    responseMsg.msg = "OK";
+                    responseMsg.data = result;
+                    res.send(responseMsg);
+                }
+            });
+        });
+    }
+    else {
+        responseMsg.msg = "DUPLICATE";
+        res.send()
+    }
 }
  
 exports.updateUsers = function(req, res) {
@@ -124,3 +149,11 @@ exports.authenticate = function(req, res) {
 
 
 
+var socials = function(userId, socialtype, socialId) {
+
+
+}
+
+var newUser = function(userInfo) {
+    
+}

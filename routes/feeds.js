@@ -29,48 +29,25 @@ exports.findById = function(req, res) {
 };
  
 exports.findAll = function(req, res) {
-
+    
     var request = req.params;
-    var nPerPage = req.params.page;
-    var pageNumber = req.params.limit;
-    var type = req.params.type;
-/*
-    if(JSON.stringify(request.limit) != undefined) 
-        nPerPage = JSON.stringify(request.limit);
-    if(JSON.stringify(request.page) != undefined)
-        pageNumber = JSON.stringify(request.page);
-    if(JSON.stringify(request.type) != undefined)
-        type.type = {type: JSON.stringify(request.type)+''};
-*/
-    console.log("type" + type);
-    console.log("pageNumber" + pageNumber);
-    console.log("nPerPage" +  nPerPage);
-    var cursor;
+    var date = req.param("date");
+    var pageNumber = parseInt(req.param("limit"));
+    var type = req.param("type");
+    var direction = req.param("direction");
 
     db.collection('feeds', function(err, collection) {
-        //collection.find().toArray(function(err, items) {
-        //    responseMsg.msg = "OK";
-        //    responseMsg.data = items;
-        //    res.send(responseMsg);
-        //});
-        if(type === '') {
-            cursor = collection.find().sort([['date_modified', -1]]);    
-        }
-        else {
-            cursor = collection.find(type).sort([['date_modified', -1]]);       
-        }
 
-        
-        cursor.skip(pageNumber > 0 ?((pageNumber-1)*nPerPage) : 0).limit(nPerPage).toArray(function(err, items){
-
+        //cursor = collection.find().sort([['date_modified', -1]]);    
+        collection.find(createSelector(type, direction, date)).sort([['date_modified', -1]]).limit(pageNumber).toArray(function(err, items){
 
             if(err) {
-                responseMsg.msg = "OK";
+                responseMsg.msg = "NG";
                 responseMsg.data = err;
                 res.send(responseMsg);
             }
             else if(items) {
-                responseMsg.msg = "NG";
+                responseMsg.msg = "OK";
                 responseMsg.data = items;
                 res.send(responseMsg);    
             }
@@ -112,4 +89,26 @@ exports.news = function(req, res) {
 };
 
 
- 
+var createSelector =  function (type, direction, date) {
+
+   var selector = '';
+   console.log("data: " + type + " " + direction + " " + date);
+   if(type != undefined || type != '') {
+       selector['type'] = type;
+   } 
+
+   if(direction != undefined) {
+       if(direction == 'prev') {
+          selector['date_modified'] = {$gt: date}
+       }
+       else if (direction == 'next') {
+          selector['date_modified'] = {$lt: date}
+       }
+   }
+
+   console.log('selector ' + selector);
+   if(selector != '') {
+       return selector;
+   }
+
+}

@@ -22,8 +22,8 @@ app.post('/vehicles', vehicles.addVehicles);
 app.put('/vehicles/:id', vehicles.updateVehicles);
 app.delete('/vehicles/:id', vehicles.deleteVehicles)
 
-app.post('/feeds', feeds.findAll);
-app.post('/feeds/:id', feeds.findById);
+app.get('/feeds', feeds.findAll);
+app.get('/feeds/:id', feeds.findById);
 
 app.listen(port);
 console.log('Listening on port 8080...');

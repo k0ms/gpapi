@@ -48,20 +48,8 @@ exports.addUsers = function(req, res) {
     //add processing for social media
 
     //find if email is existing 
-    db.collection('users', function(err,collection) {
-        collection.findOne({'email': users.email}, function(err, item){
-            if(err) {
-                isExisting = false;
-            }
-            else if(item) {
-                if(item.email != '') {
-                    isExsiting = true;
-                }
 
-            }
-        });
-    });
-    if(!isExisting) {
+    if(isUserExist(users) != undefined) {
         users.password = crypto.createHash('md5').update( JSON.stringify(users.password) ).digest("hex");
         db.collection('users', function(err, collection) {
             collection.insert(users, {safe:true}, function(err, result) {
@@ -106,7 +94,6 @@ exports.updateUsers = function(req, res) {
  
 exports.deleteUsers = function(req, res) {
     var id = req.params.id;
-    
     console.log('Deleting users: ' + id);
     db.collection('users', function(err, collection) {
         collection.remove({'_id':  ""+ id}, {safe:true}, function(err, result) {
@@ -122,38 +109,138 @@ exports.deleteUsers = function(req, res) {
 
 exports.authenticate = function(req, res) {
     var user = req.body;    
-    console.log(JSON.stringify(user));
-    console.log(JSON.stringify(user.password));
-    user.password = crypto.createHash('md5').update( JSON.stringify(user.password) ).digest("hex");
-    console.log(JSON.stringify(user.password));
-    db.collection('users', function(err, collection) {
-        collection.findOne({'email': user.email}, function(err, item) {
-            console.log(item.password);
-            if(err) {
-                res.send({'msg': 'NG'});
-                console.log("authorized");
-            }
-            else {
-                if(item) {
-                    if(JSON.stringify(user.password ) == JSON.stringify(item.password))
-                    res.send({"msg":'OK', 'data': item});
-                    else
-                        res.send({'msg': 'NOT_AUTHORIZED'});
+    var social;
+    var newUser;
+
+    if(user.social_type != undefined && user.social_type != '') {
+        social = isSocialExist(user);
+        if(social != undefined) {
+            db.collection('users', function(err, collection) {
+                collection.findOne({'_id': ""+social.user_id}, function(err, item) {
+                    responseMsg.data = [];
+                    if(err) {
+                        responseMsg.msg = "NG";
+                    }
+                    else {
+                        if(item === null) {
+                            responseMsg.msg = "NOT_FOUND";
+                        }
+                        else {
+                            item.socials = social;
+                            responseMsg.msg = "OK";
+                            responseMsg.data = item;
+                        }
+                    }
+                    res.send(responseMsg);
+
+                });
+            });
+        }
+        else {
+            //add user add social
+            db.collection('users', function(err, collection) {
+                collection.insert(users, {safe:true}, function(err, result) {
+                    if (err) {
+                        res.send({'error':'An error has occurred'});
+                    } else {
+
+                        newUser = addSocialsTable(result[0]._id, user.social_type, user.social_id)
+                        result[0].socials = newUser;
+                        console.log('Success: ' + JSON.stringify(result[0]));
+                        responseMsg.msg = "OK";
+                        responseMsg.data = result;
+                        res.send(responseMsg);
+                    }
+                });
+            });
+        }
+    }
+    else {
+        user.password = crypto.createHash('md5').update( JSON.stringify(user.password) ).digest("hex");
+        console.log(JSON.stringify(user.password));
+        db.collection('users', function(err, collection) {
+            collection.findOne({'email': user.email}, function(err, item) {
+                console.log(item.password);
+                if(err) {
+                    res.send({'msg': 'NG'});
+                    console.log("authorized");
                 }
-                else
-                res.send({'msg': 'NOT_AUTHORIZED'});
+                else {
+                    if(item) {
+                        if(JSON.stringify(user.password ) == JSON.stringify(item.password))
+                        res.send({"msg":'OK', 'data': item});
+                        else
+                            res.send({'msg': 'NOT_AUTHORIZED'});
+                    }
+                    else
+                    res.send({'msg': 'NOT_AUTHORIZED'});
+                }
+            });
+        });
+    }
+}
+
+
+
+var addSocialsTable = function(userId, socialType, socialId) {
+    var users = { 'user_id': userId, 'social_type': socialType, 'social_id': socialId}    
+    db.collection('socials', function(err, collection) {
+        collection.insert(users, {safe:true}, function(err, result) {
+            if (err) {
+                return undefined;
+            } else {
+                console.log('Success: ' + JSON.stringify(result[0]));
+                return result;
             }
         });
     });
-}
+};
 
-
-
-var socials = function(userId, socialtype, socialId) {
-
-
-}
-
-var newUser = function(userInfo) {
+var addUsersTable = function(userInfo) {
     
-}
+};
+
+var loginUsingEmail = function () {
+
+};
+
+var isUserExist = function (users) {
+    var ret = undefined;
+
+    db.collection('users', function(err,collection) {
+        collection.findOne({'email': users.email}, function(err, item){
+            if(err) {
+                ret = undefined;
+            }
+            else if(item) {
+                if(item.email != '') {
+                    ret = item._id;
+                }
+                else {
+                    ret = undefined;
+                }
+            }
+        });
+    });
+
+    return ret;
+};
+
+var isSocialExist = function (user){
+
+    db.collection('socials', function(err, collection) {
+        collection.findOne({'social_id': user.social_id, 'social_type': user.social_type}, function(err, item) {
+            if(err) {
+                return undefined;
+            }
+            else {
+                if(item) {
+                    return item;
+                }
+                else {
+                    return undefined;
+                }
+            }
+        });
+    });
+};

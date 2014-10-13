@@ -38,8 +38,8 @@ exports.findAll = function(req, res) {
 
     db.collection('feeds', function(err, collection) {
 
-        //cursor = collection.find().sort([['date_modified', -1]]);    
-        collection.find(createSelector(type, direction, date)).sort([['date_modified', -1]]).limit(pageNumber).toArray(function(err, items){
+        //cursor = collection.find().sort([['date_modified', -1]]);
+        collection.find(createSelector(type, direction, date))/*.sort([['date_modified', -1]])*/.limit(pageNumber).toArray(function(err, items){
 
             if(err) {
                 responseMsg.msg = "NG";
@@ -91,23 +91,25 @@ exports.news = function(req, res) {
 
 var createSelector =  function (type, direction, date) {
 
-   var selector = '';
+   var selector = {};
    console.log("data: " + type + " " + direction + " " + date);
    if(type != undefined || type != '') {
        selector['type'] = type;
+       console.log('type');
    } 
 
    if(direction != undefined) {
        if(direction == 'prev') {
-          selector['date_modified'] = {$gt: date}
+          selector['date_modified'] = {$lt: date};
        }
        else if (direction == 'next') {
-          selector['date_modified'] = {$lt: date}
+          selector['date_modified'] = {$gt: date};
        }
    }
 
-   console.log('selector ' + selector);
+   console.log('selector ' + JSON.stringify(selector));
    if(selector != '') {
+       console.log("return");
        return selector;
    }
 

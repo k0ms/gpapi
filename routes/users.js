@@ -48,26 +48,8 @@ exports.addUsers = function(req, res) {
     //add processing for social media
 
     //find if email is existing 
-
-    if(isUserExist(users) != undefined) {
-        users.password = crypto.createHash('md5').update( JSON.stringify(users.password) ).digest("hex");
-        db.collection('users', function(err, collection) {
-            collection.insert(users, {safe:true}, function(err, result) {
-                if (err) {
-                    res.send({'error':'An error has occurred'});
-                } else {
-                    console.log('Success: ' + JSON.stringify(result[0]));
-                    responseMsg.msg = "OK";
-                    responseMsg.data = result;
-                    res.send(responseMsg);
-                }
-            });
-        });
-    }
-    else {
-        responseMsg.msg = "DUPLICATE";
-        res.send()
-    }
+    console.log("ADDUSERS");
+    isUserExist(users, db, addUserFunc,res);
 }
  
 exports.updateUsers = function(req, res) {
@@ -196,34 +178,39 @@ var addSocialsTable = function(userId, socialType, socialId) {
     });
 };
 
-var addUsersTable = function(userInfo) {
-    
-};
-
-var loginUsingEmail = function () {
-
-};
-
-var isUserExist = function (users) {
-    var ret = undefined;
-
+var isUserExist = function (users, db, callback,res) {
+    var ret = false;
+    console.log("isUserExist");
     db.collection('users', function(err,collection) {
+        console.log(users.email);
         collection.findOne({'email': users.email}, function(err, item){
             if(err) {
-                ret = undefined;
+                console.log("Error: "+err);
+                ret = false;
             }
             else if(item) {
+                console.log("EXIST: "+JSON.stringify(item));
                 if(item.email != '') {
-                    ret = item._id;
+                    ret = true;
                 }
                 else {
-                    ret = undefined;
+                    ret = false;
                 }
             }
+
+            if((ret==false)) 
+             callback(db,users,res);
+            else {
+                console.log("DUPLICATE");
+                responseMsg.msg = "DUPLICATE";
+                responseMsg.data = [];
+                res.send(responseMsg);
+             }
+
+             return ret;
         });
     });
-
-    return ret;
+   
 };
 
 var isSocialExist = function (user){
@@ -242,5 +229,22 @@ var isSocialExist = function (user){
                 }
             }
         });
+    });
+};
+
+var addUserFunc = function (db, users,res){
+
+    users.password = crypto.createHash('md5').update( JSON.stringify(users.password) ).digest("hex");
+        db.collection('users', function(err, collection) {
+            collection.insert(users, {safe:true}, function(err, result) {
+                if (err) {
+                    res.send({'error':'An error has occurred'});
+                } else {
+                    console.log('Success: ' + JSON.stringify(result[0]));
+                    responseMsg.msg = "OK";
+                    responseMsg.data = result;
+                    res.send(responseMsg);
+                }
+            });
     });
 };

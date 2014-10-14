@@ -65,10 +65,17 @@ exports.updateUsers = function(req, res) {
                 res.send(responseMsg);
 
             } else {
-                console.log('' + result + ' document(s) updated');
-                responseMsg.msg = "OK";
-                responseMsg.data = users;
-                res.send(responseMsg);
+                if(result) {
+                    console.log('' + result + ' document(s) updated');
+                    responseMsg.msg = "OK";
+                    responseMsg.data = users;
+                    res.send(responseMsg);
+                }
+                else {
+                    responsMsg.msg = "NO_RESULT";
+                    responseMsg.data = 0;
+                    res.send(responseMsg);
+                }
             }
         });
     });

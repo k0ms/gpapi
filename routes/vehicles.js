@@ -29,8 +29,9 @@ exports.findById = function(req, res) {
 };
  
 exports.findAll = function(req, res) {
+    var id = req.params.id;
     db.collection('vehicles', function(err, collection) {
-        collection.find().toArray(function(err, items) {
+        collection.find({'user_id': id}).toArray(function(err, items) {
             responseMsg.msg = "OK";
             responseMsg.data = items;
             res.send(responseMsg);

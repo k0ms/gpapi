@@ -16,7 +16,7 @@ app.delete('/users/:id', users.deleteUsers)
 
 app.post('/auth', users.authenticate);
 
-app.get('/vehicles', vehicles.findAll);
+app.get('/vehicles/user/:id', vehicles.findAll);
 app.get('/vehicles/:id', vehicles.findById);
 app.post('/vehicles', vehicles.addVehicles);
 app.put('/vehicles/:id', vehicles.updateVehicles);

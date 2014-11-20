@@ -47,11 +47,14 @@ exports.addVehicles = function(req, res) {
     db.collection('vehicles', function(err, collection) {
         collection.insert(vehicles, {safe:true}, function(err, result) {
             if (err) {
-                res.send({'error':'An error has occurred'});
+                responseMsg.msg = "NG";
             } else {
                 console.log('Success: ' + JSON.stringify(result[0]));
-                res.send(result[0]);
+                responseMsg.msg = "OK";
+                response.data = result[0];
             }
+
+            res.send(responseMsg);
         });
     });
 }

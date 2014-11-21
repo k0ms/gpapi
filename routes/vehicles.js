@@ -51,7 +51,7 @@ exports.addVehicles = function(req, res) {
             } else {
                 console.log('Success: ' + JSON.stringify(result[0]));
                 responseMsg.msg = "OK";
-                response.data = result[0];
+                responseMsg.data = result[0];
             }
 
             res.send(responseMsg);

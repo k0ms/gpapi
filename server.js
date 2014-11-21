@@ -2,6 +2,8 @@ var express = require('express');
 var users = require('./routes/users');
 var vehicles  = require('./routes/vehicles');
 var feeds = require('./routes/feeds')
+var userFuelHistory = require('./routes/userFuelHistory');
+
 var bodyParser = require('body-parser');
 var app = express();
 
@@ -25,5 +27,7 @@ app.delete('/vehicles/:id', vehicles.deleteVehicles)
 app.get('/feeds', feeds.findAll);
 app.get('/feeds/:id', feeds.findById);
 
+app.get('/fuelhistory/:id', userFuelHistory.findAll);
+app.post('/fuelhistory', userFuelHistory.addFuelHistory)
 app.listen(port);
 console.log('Listening on port 8080...');

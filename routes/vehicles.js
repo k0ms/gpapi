@@ -39,10 +39,22 @@ exports.findAll = function(req, res) {
     });
 };
  
+exports.findAllVehicles = function(req, res) {
+
+    db.collection('vehicles', function(err, collection) {
+        collection.find().toArray(function(err, items) {
+            responseMsg.msg = "OK";
+            responseMsg.data = items;
+            res.send(responseMsg);
+        });
+    });
+};
+
 exports.addVehicles = function(req, res) {
     var vehicles = req.body;
     console.log('Adding vehicles: ' + JSON.stringify(vehicles));
     vehicles._id = new ObjectId().toHexString();
+    vehicles.date_created = formatDate();
 
     db.collection('vehicles', function(err, collection) {
         collection.insert(vehicles, {safe:true}, function(err, result) {
@@ -62,6 +74,8 @@ exports.addVehicles = function(req, res) {
 exports.updateVehicles = function(req, res) {
     var id = req.params.id;
     var vehicles = req.body;
+    vehicles.date_modified = formatDate();
+
     console.log('Updating vehicles: ' + id);
     console.log(JSON.stringify(vehicles));
     db.collection('vehicles', function(err, collection) {
@@ -74,7 +88,7 @@ exports.updateVehicles = function(req, res) {
             } else {
                 console.log('' + result + ' document(s) updated');
                 responseMsg.msg = "OK";
-                responseMsg.data = users;
+                responseMsg.data = vehicles;
                 res.send(responseMsg);
             }
         });
@@ -95,4 +109,21 @@ exports.deleteVehicles = function(req, res) {
             }
         });
     });
+}
+
+function formatDate() {
+
+    //2014_09_30_11_00_46_320", "date_modified" : "2014_09_30_11_00_46_320", "row_status" : "" }
+
+    var dte = new Date();
+
+    var ret = dte.getFullYear() + '_';
+    ret += (dte.getMonth() + 1) + '_' ;
+    ret += dte.getDate() + '_';
+    ret += dte.getHours() + '_';
+    ret += dte.getMinutes() + '_';
+    ret += dte.getSeconds() + '_';
+    ret += dte.getMilliseconds() + '';
+
+    return ret;
 }

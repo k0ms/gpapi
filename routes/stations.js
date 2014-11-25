@@ -129,25 +129,6 @@ function formatDate() {
 }
 
 
-exports.addStations = function(req, res) {
-    var vehicles = req.body;
-    console.log('Adding vehicles: ' + JSON.stringify(vehicles));
-    vehicles._id = new ObjectId().toHexString();
-    vehicles.date_created = formatDate();
-
-    db.collection('vehicles', function(err, collection) {
-        collection.insert(vehicles, {safe:true}, function(err, result) {
-            if (err) {
-                responseMsg.msg = "NG";
-            } else {
-                console.log('Success: ' + JSON.stringify(result[0]));
-                responseMsg.msg = "OK";
-                responseMsg.data = result[0];
-            }
-
-            res.send(responseMsg);
-        });
-});
 
 exports.addStation = function(req, res){
 
@@ -155,4 +136,4 @@ exports.addStation = function(req, res){
 	console.log(req);
     var file = req.files.file;
     console.log('uploads/'+file.name);
-});
+};

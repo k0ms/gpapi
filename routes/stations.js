@@ -133,7 +133,10 @@ function formatDate() {
 exports.addStation = function(req, res){
 
 	console.log(req.files);
-	console.log(req);
+	console.log(req.body.sample);
     var file = req.files.file;
     console.log('uploads/'+file.name);
+    responseMsg.msg = "OK";
+    responseMsg.data = req.body;
+    res.send(responseMsg);
 };

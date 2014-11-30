@@ -7,11 +7,29 @@ var userFuelHistory = require('./routes/userFuelHistory');
 var multer = require('multer');
 var bodyParser = require('body-parser');
 var app = express();
+var mongoose = require('mongoose');
+require('./schema/comments')();
+require('./schema/users')();
+require('./schema/stations')();
+
+var comments = require('./routes/comments');
+
+var connect = function() {
+	var options = {server: {socketOptions: {keepAlive:1}}};
+	mongoose.connect('mongodb://gasgas:irvingdelacruz77@162.243.94.60:27017/gasgas',options);
+};
+
+connect();
+mongoose.connection.on('error', console.log);
+mongoose.connection.on('disconnected', connect);
 
 app.use(multer({dest:'./uploads'}));
 
 app.use(bodyParser.json());
 var port = process.env.PORT || 3000;
+
+app.get('/comments', comments.index);
+app.post('/comments', comments.addComments);
 
 app.get('/users', users.findAll);
 app.get('/users/:id', users.findById);

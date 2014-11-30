@@ -14,13 +14,13 @@ exports.index = function (req, res){
   };
 
   comments.list(options, function (err, articles) {
-    if (err) return res.send({'msg': OK, 'data': []});
+    if (err)  res.send({'msg': 'NG', 'data': []});
     comments.count().exec(function (err, count) {
       res.send({
-        title: 'Articles',
-        articles: articles,
-        page: page + 1,
-        pages: Math.ceil(count / perPage)
+        'msg': 'OK',
+        'data': articles,
+        'page': page + 1,
+        'pages': Math.ceil(count / perPage)
       });
     });
   });

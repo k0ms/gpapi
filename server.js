@@ -11,8 +11,13 @@ var mongoose = require('mongoose');
 require('./schema/comments')();
 require('./schema/users')();
 require('./schema/stations')();
+require('./schema/userFuelHistory')();
+require('./schema/vehicles')();
+require('./schema/rating')();
 
 var comments = require('./routes/comments');
+var user_fuel_history = require('./routes/userFuelHistory2');
+var ratings = require('./routes/rating');
 
 var connect = function() {
 	var options = {server: {socketOptions: {keepAlive:1}}};
@@ -30,6 +35,7 @@ var port = process.env.PORT || 3000;
 
 app.get('/comments', comments.index);
 app.post('/comments', comments.addComments);
+app.get('/user_fuel_history', user_fuel_history.index);
 
 app.get('/users', users.findAll);
 app.get('/users/:id', users.findById);
@@ -52,5 +58,10 @@ app.get('/feeds/:id', feeds.findById);
 
 app.get('/fuelhistory/:id', userFuelHistory.findAll);
 app.post('/fuelhistory', userFuelHistory.addFuelHistory)
+
+app.get('/rating/:id', ratings.getStationRating);
+app.get('/rating/', ratings.getUserStationRating);
+app.post('/rating/', ratings.updateUserRating);
+
 app.listen(port);
 console.log('Listening on port 8080...');

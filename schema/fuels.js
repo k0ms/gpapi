@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-module.exports = {
-	var fuelsSchema =  mongoose.Schema({
+
+module.exports = function() {
+	var fuelsSchema =  Schema({
 		station_id: {type: String, ref: 'stations'},
 		franchise_fuels_id: {type: String, ref: 'franchise_fuels'},
 		price: String,
@@ -16,6 +18,20 @@ module.exports = {
 		row_status: String,
 	});
 
-	var fuelsModel = mongoose.model('fuels', fuelsSchema);
+	
+
+    fuelsSchema.statics = {
+    	list: function(options, cb) {
+    		var criteria = options.criteria || {};
+
+    		this.find(options)
+    		.populate('franchise_fuels_id')
+    		.populate('station_id')
+    		.sort({'date_modified': -1})
+    		.exec(cb);
+    	}
+    };
+
+	var fuelsModel = mongoose.model('fuels', fuelsSchema, 'fuels');
 
 };

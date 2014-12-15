@@ -33,7 +33,7 @@ module.exports = function() {
     	}
     };
 
-	mongoose.model('comments', commentsSchema);
+	mongoose.model('comments', commentsSchema, 'comments');
 
 };
 

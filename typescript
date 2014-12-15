@@ -1,0 +1,2046 @@
+Script started on Wednesday, 10 December, 2014 11:50:08 PM PHT
+]0;k0ms@resph: ~/gp_apik0ms@resph:~/gp_api$ node server.js 
+========================================================================================
+=  Please ensure that you set the default write concern for the database by setting    =
+=   one of the options                                                                 =
+=                                                                                      =
+=     w: (value of > -1 or the string 'majority'), where < 1 means                     =
+=        no write acknowledgement                                                       =
+=     journal: true/false, wait for flush to journal before acknowledgement             =
+=     fsync: true/false, wait for flush to file system before acknowledgement           =
+=                                                                                      =
+=  For backward compatibility safe is still supported and                              =
+=   allows values of [true | false | {j:true} | {w:n, wtimeout:n} | {fsync:true}]      =
+=   the default value is false which means the driver receives does not                =
+=   return the information of the success/error of the insert/update/remove            =
+=                                                                                      =
+=   ex: new Db(new Server('localhost', 27017), {safe:false})                           =
+=                                                                                      =
+=   http://www.mongodb.org/display/DOCS/getLastError+Command                           =
+=                                                                                      =
+=  The default of no acknowledgement will change in the very near future                =
+=                                                                                      =
+=  This message will disappear when the default safe is set on the driver Db           =
+========================================================================================
+gasgas irvingdelacruz77
+Listening on port 8080...
+Connected to 'mongohq' database
+The 'users' collection doesn't exist. Creating it with sample data...
+Authenticate Successful
+Aggregate Results
+[{"_id":"53957d16e2e2b2be4800003b","fuels":["Fuel Save","V Power Nitro+","Fuel Save Diesel"]},{"_id":"53dd1fa167b1d6421300012a","fuels":["testing 123 &","testing 123 &","test","Superduper Max"]},{"_id":"53bfb01367b1d642130000b1","fuels":["testing 123 &","testing 123 &","test"]},{"_id":"53b06ceb67b1d6421300006f","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53b03bcc67b1d64213000064","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53b043b067b1d64213000068","fuels":["Petron Blaze 100 Octane","Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron XCS 95 Octane","Petron Xtra Advance 93 Octane"]},{"_id":"53a31e4267b1d64213000019","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53a2b34967b1d64213000008","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"5399bb23e2e2b2be4800006a","fuels":["Protec 95 Octane","Premier Unleaded 93 Octane","Diesel"]},{"_id":"539a1122e2e2b2be4800007a","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"5399bc6fe2e2b2be4800006c","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53a2b3b567b1d64213000009","fuels":["Diesel","Premier Unleaded 93 Octane","Protec 95 Octane"]},{"_id":"5393355ae2e2b2be48000024","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"539334fbe2e2b2be48000023","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53937275e2e2b2be48000029","fuels":["Gold","Silver","Diesel"]},{"_id":"53d6d1a367b1d64213000113","fuels":["Diesel","Protec 95 Octane","Premier Unleaded 93 Octane"]},{"_id":"53937343e2e2b2be4800002b","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"5399bed8e2e2b2be4800006d","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53fdd0c12bf7345516000026","fuels":["test","testing 123 &","testing 123 &"]},{"_id":"53998d87e2e2b2be48000067","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53a050cee2e2b2be4800011c","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"5399c183e2e2b2be48000073","fuels":["Gold","Silver","Diesel"]},{"_id":"5399c316e2e2b2be48000076","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53938bd2e2e2b2be4800002c","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"5399c3d4e2e2b2be48000077","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53eddee467b1d64213000147","fuels":["Gold","Silver","Diesel"]},{"_id":"53b52ef067b1d64213000093","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"5398ac31e2e2b2be48000062","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"5399bb05e2e2b2be48000069","fuels":["Gold","Silver","Diesel"]},{"_id":"53a98e4567b1d64213000031","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53c1464b67b1d642130000b4","fuels":["Superduper Max","testing 123 &","testing 123 &","test"]},{"_id":"53ad843667b1d6421300004a","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"539825c5e2e2b2be4800004d","fuels":["Gold","Silver","Diesel"]},{"_id":"5399c000e2e2b2be48000072","fuels":["Protec 95 Octane","Premier Unleaded 93 Octane","Diesel"]},{"_id":"53ce066b67b1d642130000f3","fuels":["Superduper Max","Petron Blaze 100 Octane","Petron Xtra Advance 93 Octane","Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron XCS 95 Octane"]},{"_id":"539a125fe2e2b2be4800007c","fuels":["Fuel Save","V Power Nitro+","Fuel Save Diesel"]},{"_id":"53933688e2e2b2be48000026","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53b5b31e67b1d64213000096","fuels":["Gold","Silver","Diesel"]},{"_id":"53b0712b67b1d64213000071","fuels":["testing 123 &","testing 123 &","test"]},{"_id":"53f9a3672bf734551600000f","fuels":["Diesel","Premier Unleaded 93 Octane","Protec 95 Octane"]},{"_id":"53a3200667b1d6421300001b","fuels":["Protec","Premier Unleaded","Diesel"]},{"_id":"54270495fbb5ffb720000006","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53ee2bf167b1d6421300014c","fuels":["Petron Xtend Auto LPG","Super Xtra Gasoline 91 Octane","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53ee2d5767b1d6421300014e","fuels":["Petron Xtend Auto LPG","Super Xtra Gasoline 91 Octane","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53ede12067b1d64213000148","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53a98dcf67b1d64213000030","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53ff8a642bf734551600011c","fuels":["Petron Blaze 100 Octane","Petron Xtra Advance 93 Octane","Petron Xtend Auto LPG","test 1"]},{"_id":"5393397ce2e2b2be48000028","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron XCS 95 Octane","Petron Blaze 100 Octane","Petron Xtra Advance 93 Octane"]},{"_id":"539ab31ae2e2b2be48000082","fuels":["Gold","Silver","Diesel"]},{"_id":"53a96cd967b1d6421300002c","fuels":["custom fuel"]},{"_id":"53e68ef667b1d64213000137","fuels":["Superduper Max","testing 123 &","testing 123 &","test"]},{"_id":"539de1ffe2e2b2be4800010b","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"539ab5f1e2e2b2be48000083","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53ee2c8b67b1d6421300014d","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53c2a85767b1d642130000b9","fuels":["Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane","Super Xtra Gasoline 91 Octane"]},{"_id":"539a12d6e2e2b2be4800007d","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53a3014067b1d64213000012","fuels":["Gold","Silver","Diesel"]},{"_id":"53b3298867b1d6421300008d","fuels":["Fuel Save","V Power Nitro Diesel","V Power Nitro + Racing","Fuel Save Diesel","V Power Nitro+"]},{"_id":"5399c18de2e2b2be48000074","fuels":["Diesel","Gold","Silver"]},{"_id":"53ac5bec67b1d64213000039","fuels":["Protec","Diesel","Premier Unleaded","Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"5398ac0ee2e2b2be4800005f","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53b03e7967b1d64213000067","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53a303cc67b1d64213000013","fuels":["Gold","Silver","Diesel"]},{"_id":"53a31d7a67b1d64213000018","fuels":["Gold","Silver","Diesel"]},{"_id":"539f813be2e2b2be4800010c","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"539ab966e2e2b2be48000084","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53ad728067b1d64213000048","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53b074ee67b1d64213000072","fuels":["Diesel","Fuel Save","Fuel Save Diesel","V Power Nitro+","Protec","Premier Unleaded"]},{"_id":"53ee2ba867b1d6421300014b","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"539372ade2e2b2be4800002a","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron XCS 95 Octane","Petron Blaze 100 Octane","Petron Xtra Advance 93 Octane"]},{"_id":"53a4521a67b1d6421300001c","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53933582e2e2b2be48000025","fuels":["Gold","Silver","Diesel"]},{"_id":"53a2b21667b1d64213000004","fuels":["Gold","Diesel","Silver"]},{"_id":"53a4748967b1d6421300001d","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53998a3ae2e2b2be48000065","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"5399a84ee2e2b2be48000068","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53958015e2e2b2be4800003c","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53ac605467b1d6421300003b","fuels":["Protec","Diesel","Premier Unleaded","Gold","Silver","Diesel"]},{"_id":"53ac5fec67b1d6421300003a","fuels":["Protec","Premier Unleaded","Diesel","Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53ad72b867b1d64213000049","fuels":["Protec","Premier Unleaded","Diesel","Protec","Premier Unleaded","Diesel"]},{"_id":"53a2b46d67b1d6421300000a","fuels":["Fuel Save","V Power Nitro+","Fuel Save Diesel"]},{"_id":"5398230fe2e2b2be4800004b","fuels":["Fuel Save","V Power Nitro+","Fuel Save Diesel"]},{"_id":"5399899ae2e2b2be48000064","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"539f863ce2e2b2be48000118","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"53b530d167b1d64213000094","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"53a3047767b1d64213000014","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+","V Power Nitro Diesel","V Power Nitro + Racing"]},{"_id":"539882e6e2e2b2be4800005d","fuels":["V Power Nitro+","Fuel Save","Fuel Save Diesel"]},{"_id":"539ab06be2e2b2be48000080","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"539333f2e2e2b2be48000021","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"539f8486e2e2b2be48000110","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"5399c537e2e2b2be48000079","fuels":["Diesel","Protec 95 Octane","Premier Unleaded 93 Octane"]},{"_id":"5399c4a1e2e2b2be48000078","fuels":["Super Xtra Gasoline 91 Octane","Petron Xtend Auto LPG","Petron Xtra Advance 93 Octane","Petron XCS 95 Octane","Petron Blaze 100 Octane"]},{"_id":"5399bb76e2e2b2be4800006b","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]},{"_id":"539334cae2e2b2be48000022","fuels":["Gold","Silver","Diesel"]},{"_id":"53b06e3d67b1d64213000070","fuels":["Diesel","Protec","Premier Unleaded"]},{"_id":"5398ac27e2e2b2be48000061","fuels":["Diesel","Gold","Silver"]},{"_id":"53b03d9667b1d64213000066","fuels":["Diesel","Protec","Premier Unleaded"]},{"_id":"539ab13fe2e2b2be48000081","fuels":["Fuel Save","Fuel Save Diesel","V Power Nitro+"]}]
+[ 'Fuel Save', 'V Power Nitro+', 'Fuel Save Diesel' ]
+new fuel: {"_id":"53957d16e2e2b2be4800003b","station_id":"53957d16e2e2b2be4800003b"}
+[ 'testing 123 &', 'testing 123 &', 'test', 'Superduper Max' ]
+new fuel: {"_id":"53dd1fa167b1d6421300012a","station_id":"53dd1fa167b1d6421300012a"}
+[ 'testing 123 &', 'testing 123 &', 'test' ]
+new fuel: {"_id":"53bfb01367b1d642130000b1","station_id":"53bfb01367b1d642130000b1"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53b06ceb67b1d6421300006f","station_id":"53b06ceb67b1d6421300006f"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53b03bcc67b1d64213000064","station_id":"53b03bcc67b1d64213000064"}
+[ 'Petron Blaze 100 Octane',
+  'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron XCS 95 Octane',
+  'Petron Xtra Advance 93 Octane' ]
+new fuel: {"_id":"53b043b067b1d64213000068","station_id":"53b043b067b1d64213000068"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53a31e4267b1d64213000019","station_id":"53a31e4267b1d64213000019"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53a2b34967b1d64213000008","station_id":"53a2b34967b1d64213000008"}
+[ 'Protec 95 Octane', 'Premier Unleaded 93 Octane', 'Diesel' ]
+new fuel: {"_id":"5399bb23e2e2b2be4800006a","station_id":"5399bb23e2e2b2be4800006a"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"539a1122e2e2b2be4800007a","station_id":"539a1122e2e2b2be4800007a"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"5399bc6fe2e2b2be4800006c","station_id":"5399bc6fe2e2b2be4800006c"}
+[ 'Diesel', 'Premier Unleaded 93 Octane', 'Protec 95 Octane' ]
+new fuel: {"_id":"53a2b3b567b1d64213000009","station_id":"53a2b3b567b1d64213000009"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"5393355ae2e2b2be48000024","station_id":"5393355ae2e2b2be48000024"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"539334fbe2e2b2be48000023","station_id":"539334fbe2e2b2be48000023"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"53937275e2e2b2be48000029","station_id":"53937275e2e2b2be48000029"}
+[ 'Diesel', 'Protec 95 Octane', 'Premier Unleaded 93 Octane' ]
+new fuel: {"_id":"53d6d1a367b1d64213000113","station_id":"53d6d1a367b1d64213000113"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53937343e2e2b2be4800002b","station_id":"53937343e2e2b2be4800002b"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"5399bed8e2e2b2be4800006d","station_id":"5399bed8e2e2b2be4800006d"}
+[ 'test', 'testing 123 &', 'testing 123 &' ]
+new fuel: {"_id":"53fdd0c12bf7345516000026","station_id":"53fdd0c12bf7345516000026"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53998d87e2e2b2be48000067","station_id":"53998d87e2e2b2be48000067"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53a050cee2e2b2be4800011c","station_id":"53a050cee2e2b2be4800011c"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"5399c183e2e2b2be48000073","station_id":"5399c183e2e2b2be48000073"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"5399c316e2e2b2be48000076","station_id":"5399c316e2e2b2be48000076"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53938bd2e2e2b2be4800002c","station_id":"53938bd2e2e2b2be4800002c"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"5399c3d4e2e2b2be48000077","station_id":"5399c3d4e2e2b2be48000077"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"53eddee467b1d64213000147","station_id":"53eddee467b1d64213000147"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53b52ef067b1d64213000093","station_id":"53b52ef067b1d64213000093"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"5398ac31e2e2b2be48000062","station_id":"5398ac31e2e2b2be48000062"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"5399bb05e2e2b2be48000069","station_id":"5399bb05e2e2b2be48000069"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53a98e4567b1d64213000031","station_id":"53a98e4567b1d64213000031"}
+[ 'Superduper Max', 'testing 123 &', 'testing 123 &', 'test' ]
+new fuel: {"_id":"53c1464b67b1d642130000b4","station_id":"53c1464b67b1d642130000b4"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53ad843667b1d6421300004a","station_id":"53ad843667b1d6421300004a"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"539825c5e2e2b2be4800004d","station_id":"539825c5e2e2b2be4800004d"}
+[ 'Protec 95 Octane', 'Premier Unleaded 93 Octane', 'Diesel' ]
+new fuel: {"_id":"5399c000e2e2b2be48000072","station_id":"5399c000e2e2b2be48000072"}
+[ 'Superduper Max',
+  'Petron Blaze 100 Octane',
+  'Petron Xtra Advance 93 Octane',
+  'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron XCS 95 Octane' ]
+new fuel: {"_id":"53ce066b67b1d642130000f3","station_id":"53ce066b67b1d642130000f3"}
+[ 'Fuel Save', 'V Power Nitro+', 'Fuel Save Diesel' ]
+new fuel: {"_id":"539a125fe2e2b2be4800007c","station_id":"539a125fe2e2b2be4800007c"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53933688e2e2b2be48000026","station_id":"53933688e2e2b2be48000026"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"53b5b31e67b1d64213000096","station_id":"53b5b31e67b1d64213000096"}
+[ 'testing 123 &', 'testing 123 &', 'test' ]
+new fuel: {"_id":"53b0712b67b1d64213000071","station_id":"53b0712b67b1d64213000071"}
+[ 'Diesel', 'Premier Unleaded 93 Octane', 'Protec 95 Octane' ]
+new fuel: {"_id":"53f9a3672bf734551600000f","station_id":"53f9a3672bf734551600000f"}
+[ 'Protec', 'Premier Unleaded', 'Diesel' ]
+new fuel: {"_id":"53a3200667b1d6421300001b","station_id":"53a3200667b1d6421300001b"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"54270495fbb5ffb720000006","station_id":"54270495fbb5ffb720000006"}
+[ 'Petron Xtend Auto LPG',
+  'Super Xtra Gasoline 91 Octane',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53ee2bf167b1d6421300014c","station_id":"53ee2bf167b1d6421300014c"}
+[ 'Petron Xtend Auto LPG',
+  'Super Xtra Gasoline 91 Octane',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53ee2d5767b1d6421300014e","station_id":"53ee2d5767b1d6421300014e"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53ede12067b1d64213000148","station_id":"53ede12067b1d64213000148"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53a98dcf67b1d64213000030","station_id":"53a98dcf67b1d64213000030"}
+[ 'Petron Blaze 100 Octane',
+  'Petron Xtra Advance 93 Octane',
+  'Petron Xtend Auto LPG',
+  'test 1' ]
+new fuel: {"_id":"53ff8a642bf734551600011c","station_id":"53ff8a642bf734551600011c"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane',
+  'Petron Xtra Advance 93 Octane' ]
+new fuel: {"_id":"5393397ce2e2b2be48000028","station_id":"5393397ce2e2b2be48000028"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"539ab31ae2e2b2be48000082","station_id":"539ab31ae2e2b2be48000082"}
+[ 'custom fuel' ]
+new fuel: {"_id":"53a96cd967b1d6421300002c","station_id":"53a96cd967b1d6421300002c"}
+[ 'Superduper Max', 'testing 123 &', 'testing 123 &', 'test' ]
+new fuel: {"_id":"53e68ef667b1d64213000137","station_id":"53e68ef667b1d64213000137"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"539de1ffe2e2b2be4800010b","station_id":"539de1ffe2e2b2be4800010b"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"539ab5f1e2e2b2be48000083","station_id":"539ab5f1e2e2b2be48000083"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53ee2c8b67b1d6421300014d","station_id":"53ee2c8b67b1d6421300014d"}
+[ 'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane',
+  'Super Xtra Gasoline 91 Octane' ]
+new fuel: {"_id":"53c2a85767b1d642130000b9","station_id":"53c2a85767b1d642130000b9"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"539a12d6e2e2b2be4800007d","station_id":"539a12d6e2e2b2be4800007d"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"53a3014067b1d64213000012","station_id":"53a3014067b1d64213000012"}
+[ 'Fuel Save',
+  'V Power Nitro Diesel',
+  'V Power Nitro + Racing',
+  'Fuel Save Diesel',
+  'V Power Nitro+' ]
+new fuel: {"_id":"53b3298867b1d6421300008d","station_id":"53b3298867b1d6421300008d"}
+[ 'Diesel', 'Gold', 'Silver' ]
+new fuel: {"_id":"5399c18de2e2b2be48000074","station_id":"5399c18de2e2b2be48000074"}
+[ 'Protec',
+  'Diesel',
+  'Premier Unleaded',
+  'Fuel Save',
+  'Fuel Save Diesel',
+  'V Power Nitro+' ]
+new fuel: {"_id":"53ac5bec67b1d64213000039","station_id":"53ac5bec67b1d64213000039"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"5398ac0ee2e2b2be4800005f","station_id":"5398ac0ee2e2b2be4800005f"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53b03e7967b1d64213000067","station_id":"53b03e7967b1d64213000067"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"53a303cc67b1d64213000013","station_id":"53a303cc67b1d64213000013"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"53a31d7a67b1d64213000018","station_id":"53a31d7a67b1d64213000018"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"539f813be2e2b2be4800010c","station_id":"539f813be2e2b2be4800010c"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"539ab966e2e2b2be48000084","station_id":"539ab966e2e2b2be48000084"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53ad728067b1d64213000048","station_id":"53ad728067b1d64213000048"}
+[ 'Diesel',
+  'Fuel Save',
+  'Fuel Save Diesel',
+  'V Power Nitro+',
+  'Protec',
+  'Premier Unleaded' ]
+new fuel: {"_id":"53b074ee67b1d64213000072","station_id":"53b074ee67b1d64213000072"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53ee2ba867b1d6421300014b","station_id":"53ee2ba867b1d6421300014b"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane',
+  'Petron Xtra Advance 93 Octane' ]
+new fuel: {"_id":"539372ade2e2b2be4800002a","station_id":"539372ade2e2b2be4800002a"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53a4521a67b1d6421300001c","station_id":"53a4521a67b1d6421300001c"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"53933582e2e2b2be48000025","station_id":"53933582e2e2b2be48000025"}
+[ 'Gold', 'Diesel', 'Silver' ]
+new fuel: {"_id":"53a2b21667b1d64213000004","station_id":"53a2b21667b1d64213000004"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53a4748967b1d6421300001d","station_id":"53a4748967b1d6421300001d"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53998a3ae2e2b2be48000065","station_id":"53998a3ae2e2b2be48000065"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"5399a84ee2e2b2be48000068","station_id":"5399a84ee2e2b2be48000068"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"53958015e2e2b2be4800003c","station_id":"53958015e2e2b2be4800003c"}
+[ 'Protec',
+  'Diesel',
+  'Premier Unleaded',
+  'Gold',
+  'Silver',
+  'Diesel' ]
+new fuel: {"_id":"53ac605467b1d6421300003b","station_id":"53ac605467b1d6421300003b"}
+[ 'Protec',
+  'Premier Unleaded',
+  'Diesel',
+  'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53ac5fec67b1d6421300003a","station_id":"53ac5fec67b1d6421300003a"}
+[ 'Protec',
+  'Premier Unleaded',
+  'Diesel',
+  'Protec',
+  'Premier Unleaded',
+  'Diesel' ]
+new fuel: {"_id":"53ad72b867b1d64213000049","station_id":"53ad72b867b1d64213000049"}
+[ 'Fuel Save', 'V Power Nitro+', 'Fuel Save Diesel' ]
+new fuel: {"_id":"53a2b46d67b1d6421300000a","station_id":"53a2b46d67b1d6421300000a"}
+[ 'Fuel Save', 'V Power Nitro+', 'Fuel Save Diesel' ]
+new fuel: {"_id":"5398230fe2e2b2be4800004b","station_id":"5398230fe2e2b2be4800004b"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"5399899ae2e2b2be48000064","station_id":"5399899ae2e2b2be48000064"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"539f863ce2e2b2be48000118","station_id":"539f863ce2e2b2be48000118"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"53b530d167b1d64213000094","station_id":"53b530d167b1d64213000094"}
+[ 'Fuel Save',
+  'Fuel Save Diesel',
+  'V Power Nitro+',
+  'V Power Nitro Diesel',
+  'V Power Nitro + Racing' ]
+new fuel: {"_id":"53a3047767b1d64213000014","station_id":"53a3047767b1d64213000014"}
+[ 'V Power Nitro+', 'Fuel Save', 'Fuel Save Diesel' ]
+new fuel: {"_id":"539882e6e2e2b2be4800005d","station_id":"539882e6e2e2b2be4800005d"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"539ab06be2e2b2be48000080","station_id":"539ab06be2e2b2be48000080"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"539333f2e2e2b2be48000021","station_id":"539333f2e2e2b2be48000021"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"539f8486e2e2b2be48000110","station_id":"539f8486e2e2b2be48000110"}
+[ 'Diesel', 'Protec 95 Octane', 'Premier Unleaded 93 Octane' ]
+new fuel: {"_id":"5399c537e2e2b2be48000079","station_id":"5399c537e2e2b2be48000079"}
+[ 'Super Xtra Gasoline 91 Octane',
+  'Petron Xtend Auto LPG',
+  'Petron Xtra Advance 93 Octane',
+  'Petron XCS 95 Octane',
+  'Petron Blaze 100 Octane' ]
+new fuel: {"_id":"5399c4a1e2e2b2be48000078","station_id":"5399c4a1e2e2b2be48000078"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"5399bb76e2e2b2be4800006b","station_id":"5399bb76e2e2b2be4800006b"}
+[ 'Gold', 'Silver', 'Diesel' ]
+new fuel: {"_id":"539334cae2e2b2be48000022","station_id":"539334cae2e2b2be48000022"}
+[ 'Diesel', 'Protec', 'Premier Unleaded' ]
+new fuel: {"_id":"53b06e3d67b1d64213000070","station_id":"53b06e3d67b1d64213000070"}
+[ 'Diesel', 'Gold', 'Silver' ]
+new fuel: {"_id":"5398ac27e2e2b2be48000061","station_id":"5398ac27e2e2b2be48000061"}
+[ 'Diesel', 'Protec', 'Premier Unleaded' ]
+new fuel: {"_id":"53b03d9667b1d64213000066","station_id":"53b03d9667b1d64213000066"}
+[ 'Fuel Save', 'Fuel Save Diesel', 'V Power Nitro+' ]
+new fuel: {"_id":"539ab13fe2e2b2be48000081","station_id":"539ab13fe2e2b2be48000081"}
+Map Results
+[{"_id":"53957d16e2e2b2be4800003b","station_id":"53957d16e2e2b2be4800003b"},{"_id":"53dd1fa167b1d6421300012a","station_id":"53dd1fa167b1d6421300012a"},{"_id":"53bfb01367b1d642130000b1","station_id":"53bfb01367b1d642130000b1"},{"_id":"53b06ceb67b1d6421300006f","station_id":"53b06ceb67b1d6421300006f"},{"_id":"53b03bcc67b1d64213000064","station_id":"53b03bcc67b1d64213000064"},{"_id":"53b043b067b1d64213000068","station_id":"53b043b067b1d64213000068"},{"_id":"53a31e4267b1d64213000019","station_id":"53a31e4267b1d64213000019"},{"_id":"53a2b34967b1d64213000008","station_id":"53a2b34967b1d64213000008"},{"_id":"5399bb23e2e2b2be4800006a","station_id":"5399bb23e2e2b2be4800006a"},{"_id":"539a1122e2e2b2be4800007a","station_id":"539a1122e2e2b2be4800007a"},{"_id":"5399bc6fe2e2b2be4800006c","station_id":"5399bc6fe2e2b2be4800006c"},{"_id":"53a2b3b567b1d64213000009","station_id":"53a2b3b567b1d64213000009"},{"_id":"5393355ae2e2b2be48000024","station_id":"5393355ae2e2b2be48000024"},{"_id":"539334fbe2e2b2be48000023","station_id":"539334fbe2e2b2be48000023"},{"_id":"53937275e2e2b2be48000029","station_id":"53937275e2e2b2be48000029"},{"_id":"53d6d1a367b1d64213000113","station_id":"53d6d1a367b1d64213000113"},{"_id":"53937343e2e2b2be4800002b","station_id":"53937343e2e2b2be4800002b"},{"_id":"5399bed8e2e2b2be4800006d","station_id":"5399bed8e2e2b2be4800006d"},{"_id":"53fdd0c12bf7345516000026","station_id":"53fdd0c12bf7345516000026"},{"_id":"53998d87e2e2b2be48000067","station_id":"53998d87e2e2b2be48000067"},{"_id":"53a050cee2e2b2be4800011c","station_id":"53a050cee2e2b2be4800011c"},{"_id":"5399c183e2e2b2be48000073","station_id":"5399c183e2e2b2be48000073"},{"_id":"5399c316e2e2b2be48000076","station_id":"5399c316e2e2b2be48000076"},{"_id":"53938bd2e2e2b2be4800002c","station_id":"53938bd2e2e2b2be4800002c"},{"_id":"5399c3d4e2e2b2be48000077","station_id":"5399c3d4e2e2b2be48000077"},{"_id":"53eddee467b1d64213000147","station_id":"53eddee467b1d64213000147"},{"_id":"53b52ef067b1d64213000093","station_id":"53b52ef067b1d64213000093"},{"_id":"5398ac31e2e2b2be48000062","station_id":"5398ac31e2e2b2be48000062"},{"_id":"5399bb05e2e2b2be48000069","station_id":"5399bb05e2e2b2be48000069"},{"_id":"53a98e4567b1d64213000031","station_id":"53a98e4567b1d64213000031"},{"_id":"53c1464b67b1d642130000b4","station_id":"53c1464b67b1d642130000b4"},{"_id":"53ad843667b1d6421300004a","station_id":"53ad843667b1d6421300004a"},{"_id":"539825c5e2e2b2be4800004d","station_id":"539825c5e2e2b2be4800004d"},{"_id":"5399c000e2e2b2be48000072","station_id":"5399c000e2e2b2be48000072"},{"_id":"53ce066b67b1d642130000f3","station_id":"53ce066b67b1d642130000f3"},{"_id":"539a125fe2e2b2be4800007c","station_id":"539a125fe2e2b2be4800007c"},{"_id":"53933688e2e2b2be48000026","station_id":"53933688e2e2b2be48000026"},{"_id":"53b5b31e67b1d64213000096","station_id":"53b5b31e67b1d64213000096"},{"_id":"53b0712b67b1d64213000071","station_id":"53b0712b67b1d64213000071"},{"_id":"53f9a3672bf734551600000f","station_id":"53f9a3672bf734551600000f"},{"_id":"53a3200667b1d6421300001b","station_id":"53a3200667b1d6421300001b"},{"_id":"54270495fbb5ffb720000006","station_id":"54270495fbb5ffb720000006"},{"_id":"53ee2bf167b1d6421300014c","station_id":"53ee2bf167b1d6421300014c"},{"_id":"53ee2d5767b1d6421300014e","station_id":"53ee2d5767b1d6421300014e"},{"_id":"53ede12067b1d64213000148","station_id":"53ede12067b1d64213000148"},{"_id":"53a98dcf67b1d64213000030","station_id":"53a98dcf67b1d64213000030"},{"_id":"53ff8a642bf734551600011c","station_id":"53ff8a642bf734551600011c"},{"_id":"5393397ce2e2b2be48000028","station_id":"5393397ce2e2b2be48000028"},{"_id":"539ab31ae2e2b2be48000082","station_id":"539ab31ae2e2b2be48000082"},{"_id":"53a96cd967b1d6421300002c","station_id":"53a96cd967b1d6421300002c"},{"_id":"53e68ef667b1d64213000137","station_id":"53e68ef667b1d64213000137"},{"_id":"539de1ffe2e2b2be4800010b","station_id":"539de1ffe2e2b2be4800010b"},{"_id":"539ab5f1e2e2b2be48000083","station_id":"539ab5f1e2e2b2be48000083"},{"_id":"53ee2c8b67b1d6421300014d","station_id":"53ee2c8b67b1d6421300014d"},{"_id":"53c2a85767b1d642130000b9","station_id":"53c2a85767b1d642130000b9"},{"_id":"539a12d6e2e2b2be4800007d","station_id":"539a12d6e2e2b2be4800007d"},{"_id":"53a3014067b1d64213000012","station_id":"53a3014067b1d64213000012"},{"_id":"53b3298867b1d6421300008d","station_id":"53b3298867b1d6421300008d"},{"_id":"5399c18de2e2b2be48000074","station_id":"5399c18de2e2b2be48000074"},{"_id":"53ac5bec67b1d64213000039","station_id":"53ac5bec67b1d64213000039"},{"_id":"5398ac0ee2e2b2be4800005f","station_id":"5398ac0ee2e2b2be4800005f"},{"_id":"53b03e7967b1d64213000067","station_id":"53b03e7967b1d64213000067"},{"_id":"53a303cc67b1d64213000013","station_id":"53a303cc67b1d64213000013"},{"_id":"53a31d7a67b1d64213000018","station_id":"53a31d7a67b1d64213000018"},{"_id":"539f813be2e2b2be4800010c","station_id":"539f813be2e2b2be4800010c"},{"_id":"539ab966e2e2b2be48000084","station_id":"539ab966e2e2b2be48000084"},{"_id":"53ad728067b1d64213000048","station_id":"53ad728067b1d64213000048"},{"_id":"53b074ee67b1d64213000072","station_id":"53b074ee67b1d64213000072"},{"_id":"53ee2ba867b1d6421300014b","station_id":"53ee2ba867b1d6421300014b"},{"_id":"539372ade2e2b2be4800002a","station_id":"539372ade2e2b2be4800002a"},{"_id":"53a4521a67b1d6421300001c","station_id":"53a4521a67b1d6421300001c"},{"_id":"53933582e2e2b2be48000025","station_id":"53933582e2e2b2be48000025"},{"_id":"53a2b21667b1d64213000004","station_id":"53a2b21667b1d64213000004"},{"_id":"53a4748967b1d6421300001d","station_id":"53a4748967b1d6421300001d"},{"_id":"53998a3ae2e2b2be48000065","station_id":"53998a3ae2e2b2be48000065"},{"_id":"5399a84ee2e2b2be48000068","station_id":"5399a84ee2e2b2be48000068"},{"_id":"53958015e2e2b2be4800003c","station_id":"53958015e2e2b2be4800003c"},{"_id":"53ac605467b1d6421300003b","station_id":"53ac605467b1d6421300003b"},{"_id":"53ac5fec67b1d6421300003a","station_id":"53ac5fec67b1d6421300003a"},{"_id":"53ad72b867b1d64213000049","station_id":"53ad72b867b1d64213000049"},{"_id":"53a2b46d67b1d6421300000a","station_id":"53a2b46d67b1d6421300000a"},{"_id":"5398230fe2e2b2be4800004b","station_id":"5398230fe2e2b2be4800004b"},{"_id":"5399899ae2e2b2be48000064","station_id":"5399899ae2e2b2be48000064"},{"_id":"539f863ce2e2b2be48000118","station_id":"539f863ce2e2b2be48000118"},{"_id":"53b530d167b1d64213000094","station_id":"53b530d167b1d64213000094"},{"_id":"53a3047767b1d64213000014","station_id":"53a3047767b1d64213000014"},{"_id":"539882e6e2e2b2be4800005d","station_id":"539882e6e2e2b2be4800005d"},{"_id":"539ab06be2e2b2be48000080","station_id":"539ab06be2e2b2be48000080"},{"_id":"539333f2e2e2b2be48000021","station_id":"539333f2e2e2b2be48000021"},{"_id":"539f8486e2e2b2be48000110","station_id":"539f8486e2e2b2be48000110"},{"_id":"5399c537e2e2b2be48000079","station_id":"5399c537e2e2b2be48000079"},{"_id":"5399c4a1e2e2b2be48000078","station_id":"5399c4a1e2e2b2be48000078"},{"_id":"5399bb76e2e2b2be4800006b","station_id":"5399bb76e2e2b2be4800006b"},{"_id":"539334cae2e2b2be48000022","station_id":"539334cae2e2b2be48000022"},{"_id":"53b06e3d67b1d64213000070","station_id":"53b06e3d67b1d64213000070"},{"_id":"5398ac27e2e2b2be48000061","station_id":"5398ac27e2e2b2be48000061"},{"_id":"53b03d9667b1d64213000066","station_id":"53b03d9667b1d64213000066"},{"_id":"539ab13fe2e2b2be48000081","station_id":"539ab13fe2e2b2be48000081"}]
+[
+    {
+        "_id": "53957d16e2e2b2be4800003b",
+        "station_id": {
+            "_id": "53957d16e2e2b2be4800003b",
+            "address": "West Avenue",
+            "date_created": "2014_06_09_09_23_34_023",
+            "date_modified": "2014_06_09_19_26_50_531",
+            "desc": "West Avenue Corner Baler Street",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.640404",
+            "longitude": "121.031269",
+            "name": "Shell West Avenue",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53dd1fa167b1d6421300012a",
+        "station_id": null
+    },
+    {
+        "_id": "53bfb01367b1d642130000b1",
+        "station_id": null
+    },
+    {
+        "_id": "53b06ceb67b1d6421300006f",
+        "station_id": {
+            "_id": "53b06ceb67b1d6421300006f",
+            "address": "Chino Roces Ave. ext, Makati",
+            "date_created": "2014_06_29_19_45_47_982",
+            "date_modified": "2014_06_29_20_55_04_542",
+            "desc": "Chino Roces Ave. ext, Makati",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.529118",
+            "longitude": "121.026329",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53b03bcc67b1d64213000064",
+        "station_id": {
+            "_id": "53b03bcc67b1d64213000064",
+            "address": "Jupiter St. Makati",
+            "date_created": "2014_06_29_16_16_12_219",
+            "date_modified": "2014_06_29_17_24_11_742",
+            "desc": "Petron Jupiter St. Makati",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.561766",
+            "longitude": "121.027314",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53b043b067b1d64213000068",
+        "station_id": {
+            "_id": "53b043b067b1d64213000068",
+            "address": "pasay edsa",
+            "date_created": "2014_06_29_16_49_52_077",
+            "date_modified": "2014_06_29_17_20_54_137",
+            "desc": "Epifaplos Santos ave, Antonio S. Arnaiz Ave. Petron",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.547479",
+            "longitude": "121.026491",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a31e4267b1d64213000019",
+        "station_id": {
+            "_id": "53a31e4267b1d64213000019",
+            "address": "Brgy. 803, Manila, Philippines",
+            "date_created": "2014_06_19_17_30_42_790",
+            "date_modified": "2014_06_27_22_46_51_987",
+            "desc": "Osmena highway",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.571312805219508",
+            "longitude": "121.00037634372711",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a2b34967b1d64213000008",
+        "station_id": {
+            "_id": "53a2b34967b1d64213000008",
+            "address": "MacArthur Highway ",
+            "date_created": "2014_06_19_09_54_17_116",
+            "date_modified": "2014_06_19_10_53_22_929",
+            "desc": "besides Fatima",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.677257",
+            "longitude": "120.980434",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399bb23e2e2b2be4800006a",
+        "station_id": {
+            "_id": "5399bb23e2e2b2be4800006a",
+            "address": "Bungad, Quezon City, Philippines",
+            "date_created": "2014_06_12_14_37_23_860",
+            "date_modified": "2014_06_21_11_38_50_848",
+            "desc": "former City Oi",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "key_status": "",
+            "latitude": "14.652636248580087",
+            "longitude": "121.02915644645691",
+            "name": "Total ",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539a1122e2e2b2be4800007a",
+        "station_id": {
+            "_id": "539a1122e2e2b2be4800007a",
+            "address": "Kristong Hari, Quezon City, Philippines",
+            "date_created": "2014_06_12_20_44_18_779",
+            "date_modified": "2014_06_13_20_29_29_990",
+            "desc": "Petron Besides Dallas Auto Service Center",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.624263648193386",
+            "longitude": "121.03310819702529",
+            "name": "Petron ",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399bc6fe2e2b2be4800006c",
+        "station_id": {
+            "_id": "5399bc6fe2e2b2be4800006c",
+            "address": "quezon avenue",
+            "date_created": "2014_06_12_14_42_55_613",
+            "date_modified": "2014_06_12_20_03_29_680",
+            "desc": "near Fisher Mall ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.635627",
+            "longitude": "121.023527",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a2b3b567b1d64213000009",
+        "station_id": {
+            "_id": "53a2b3b567b1d64213000009",
+            "address": "Karuhatan, Valenzuela City, Philippines",
+            "date_created": "2014_06_19_09_56_05_415",
+            "date_modified": "2014_07_15_13_13_24_106",
+            "desc": "besides SM Valenzuela ",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "key_status": "",
+            "latitude": "14.684598830651602",
+            "longitude": "120.97740054130554",
+            "name": "total",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5393355ae2e2b2be48000024",
+        "station_id": {
+            "_id": "5393355ae2e2b2be48000024",
+            "address": "Kamuning Road ",
+            "date_created": "2014_06_07_15_52_58_137",
+            "date_modified": "2014_06_12_20_00_36_384",
+            "desc": "near GMA",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.632805",
+            "longitude": "121.044529",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539334fbe2e2b2be48000023",
+        "station_id": {
+            "_id": "539334fbe2e2b2be48000023",
+            "address": "timog avenue ",
+            "date_created": "2014_06_07_15_51_23_170",
+            "date_modified": "2014_06_12_19_59_21_781",
+            "desc": "near GMA ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.632805",
+            "longitude": "121.044529",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53937275e2e2b2be48000029",
+        "station_id": {
+            "_id": "53937275e2e2b2be48000029",
+            "address": "Edsa Greenhills",
+            "date_created": "2014_06_07_20_13_41_116",
+            "date_modified": "2014_06_12_19_57_32_514",
+            "desc": "annapolis",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.601569",
+            "longitude": "121.058960",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53d6d1a367b1d64213000113",
+        "station_id": {
+            "_id": "53d6d1a367b1d64213000113",
+            "address": "Greenhills, San Juan, Philippines",
+            "date_created": "2014_07_28_22_41_39_392",
+            "date_modified": "2014_07_28_22_43_52_341",
+            "desc": "Near Xavier School Ortigas",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "key_status": "",
+            "latitude": "14.60653362843617",
+            "longitude": "121.04018404137605",
+            "name": "Total",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53937343e2e2b2be4800002b",
+        "station_id": {
+            "_id": "53937343e2e2b2be4800002b",
+            "address": "meralco ortigas ",
+            "date_created": "2014_06_07_20_17_07_674",
+            "date_modified": "2014_06_12_19_56_53_040",
+            "desc": "across Meralco",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.589137",
+            "longitude": "121.063276",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399bed8e2e2b2be4800006d",
+        "station_id": {
+            "_id": "5399bed8e2e2b2be4800006d",
+            "address": "sta Mesa",
+            "date_created": "2014_06_12_14_53_12_923",
+            "date_modified": "2014_06_12_19_50_14_334",
+            "desc": "intersection of Banawe and Sta Mesa ",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.618857",
+            "longitude": "121.014781",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53fdd0c12bf7345516000026",
+        "station_id": null
+    },
+    {
+        "_id": "53998d87e2e2b2be48000067",
+        "station_id": {
+            "_id": "53998d87e2e2b2be48000067",
+            "address": "Nayong Kanluran, Quezon City, Philippines",
+            "date_created": "2014_06_12_11_22_47_524",
+            "date_modified": "2014_06_21_11_41_08_163",
+            "desc": "corner Del Monte Avenue ",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.642406614299064",
+            "longitude": "121.0268497467041",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a050cee2e2b2be4800011c",
+        "station_id": {
+            "_id": "53a050cee2e2b2be4800011c",
+            "address": "Talayan Araneta Avenue corner Maria Clara ",
+            "date_created": "2014_06_17_14_29_34_879",
+            "date_modified": "2014_06_18_23_41_45_290",
+            "desc": "across talayan village gate ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.630176",
+            "longitude": "121.011474",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399c183e2e2b2be48000073",
+        "station_id": {
+            "_id": "5399c183e2e2b2be48000073",
+            "address": "Kristong Hari, Quezon City, Philippines",
+            "date_created": "2014_06_12_15_04_35_862",
+            "date_modified": "2014_06_12_17_28_55_865",
+            "desc": "Caltex After QC Sports Club",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.623152743779864",
+            "longitude": "121.02831065652026",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399c316e2e2b2be48000076",
+        "station_id": {
+            "_id": "5399c316e2e2b2be48000076",
+            "address": "balete",
+            "date_created": "2014_06_12_15_11_18_268",
+            "date_modified": "2014_06_12_16_50_44_442",
+            "desc": "besides dunkin donuts ",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.616644",
+            "longitude": "121.039693",
+            "name": "Perron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53938bd2e2e2b2be4800002c",
+        "station_id": {
+            "_id": "53938bd2e2e2b2be4800002c",
+            "address": "tiendesitas c5",
+            "date_created": "2014_06_07_22_01_54_302",
+            "date_modified": "2014_06_11_15_41_01_025",
+            "desc": "Shell in Tiendesitas C5",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.582821",
+            "longitude": "121.076380",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399c3d4e2e2b2be48000077",
+        "station_id": {
+            "_id": "5399c3d4e2e2b2be48000077",
+            "address": "P Tuazon Boulevard",
+            "date_created": "2014_06_12_15_14_28_398",
+            "date_modified": "2014_06_12_16_50_07_786",
+            "desc": "near chocolate castle ",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.615737",
+            "longitude": "121.045573",
+            "name": "petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53eddee467b1d64213000147",
+        "station_id": {
+            "_id": "53eddee467b1d64213000147",
+            "address": "Holy Spirit, Quezon City, Philippines",
+            "date_created": "2014_08_15_10_20_20_444",
+            "date_modified": "2014_08_27_20_23_07_702",
+            "desc": "besides Iglesia ni Cristo ",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.67313041056629",
+            "longitude": "121.07946395874023",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53b52ef067b1d64213000093",
+        "station_id": {
+            "_id": "53b52ef067b1d64213000093",
+            "address": "JP Rizal Ave, Antipolo St. Makati",
+            "date_created": "2014_07_03_10_22_40_026",
+            "date_modified": "2014_07_03_11_28_14_221",
+            "desc": "Petron - JP Rizal Ave, Antipolo St. Makati",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.569441127092153",
+            "longitude": "121.02439284324646",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5398ac31e2e2b2be48000062",
+        "station_id": {
+            "_id": "5398ac31e2e2b2be48000062",
+            "address": "Putatan, Muntinlupa, Philippines",
+            "date_created": "2014_06_11_19_21_21_140",
+            "date_modified": "2014_06_11_19_21_21_140",
+            "desc": "Gasgas Base 4",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.395547462498",
+            "longitude": "121.03390395641327",
+            "name": "Gasgas Base 4",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399bb05e2e2b2be48000069",
+        "station_id": {
+            "_id": "5399bb05e2e2b2be48000069",
+            "address": "Bungad, Quezon City, Philippines",
+            "date_created": "2014_06_12_14_36_53_240",
+            "date_modified": "2014_07_15_13_09_51_124",
+            "desc": "Besides Back to the Bible Bookstore ",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.65420879842159",
+            "longitude": "121.0295695066452",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a98e4567b1d64213000031",
+        "station_id": {
+            "_id": "53a98e4567b1d64213000031",
+            "address": "Bagumbayan, Quezon City, Philippines",
+            "date_created": "2014_06_24_14_42_13_470",
+            "date_modified": "2014_06_24_22_55_36_563",
+            "desc": "Shell Wilcon Builders Supply",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.605462973356715",
+            "longitude": "121.0787542070102",
+            "name": "Shell Wilcon Builders",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53c1464b67b1d642130000b4",
+        "station_id": null
+    },
+    {
+        "_id": "53ad843667b1d6421300004a",
+        "station_id": null
+    },
+    {
+        "_id": "539825c5e2e2b2be4800004d",
+        "station_id": {
+            "_id": "539825c5e2e2b2be4800004d",
+            "address": "EDSA BALINTAWAK",
+            "date_created": "2014_06_11_09_47_49_609",
+            "date_modified": "2014_06_11_14_06_41_507",
+            "desc": "Caltex along Edsa Balintawak",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.657447",
+            "longitude": "121.001883",
+            "name": "CALTEX",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399c000e2e2b2be48000072",
+        "station_id": {
+            "_id": "5399c000e2e2b2be48000072",
+            "address": "Sta Mesa, Quezon City",
+            "date_created": "2014_06_12_14_58_08_656",
+            "date_modified": "2014_06_12_19_48_29_454",
+            "desc": "after Puregold ",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "key_status": "",
+            "latitude": "14.609275",
+            "longitude": "121.017143",
+            "name": "Total",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ce066b67b1d642130000f3",
+        "station_id": {
+            "_id": "53ce066b67b1d642130000f3",
+            "address": "Camella Mella",
+            "date_created": "2014_07_22_06_36_27_615",
+            "date_modified": "2014_08_07_10_25_37_631",
+            "desc": "Camella Pheonix",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "station_of_the_month",
+            "latitude": "14.396808",
+            "longitude": "121.033819",
+            "name": "Phoenix",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539a125fe2e2b2be4800007c",
+        "station_id": {
+            "_id": "539a125fe2e2b2be4800007c",
+            "address": "South Triangle, Quezon City, Philippines",
+            "date_created": "2014_06_12_20_49_35_066",
+            "date_modified": "2014_06_18_23_52_08_517",
+            "desc": "corner Sct Tuason",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.635472405122327",
+            "longitude": "121.03306710720062",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53933688e2e2b2be48000026",
+        "station_id": {
+            "_id": "53933688e2e2b2be48000026",
+            "address": "Timog Corner E. Rodriguez in Front of Petron",
+            "date_created": "2014_06_07_15_58_00_032",
+            "date_modified": "2014_06_09_19_28_56_137",
+            "desc": "Timog Corner E. Rodriguez",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.627307",
+            "longitude": "121.034185",
+            "name": "Shell E. Rodriguez",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53b5b31e67b1d64213000096",
+        "station_id": {
+            "_id": "53b5b31e67b1d64213000096",
+            "address": "",
+            "date_created": "2014_07_03_19_46_38_433",
+            "date_modified": "2014_07_03_19_46_40_969",
+            "desc": "",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/stations/image/2014_07_03_19_46_40_959.jpg",
+            "key_status": "",
+            "latitude": "14.396794",
+            "longitude": "121.033761",
+            "name": "Caltex",
+            "rating": "",
+            "row_status": "2"
+        }
+    },
+    {
+        "_id": "53b0712b67b1d64213000071",
+        "station_id": {
+            "_id": "53b0712b67b1d64213000071",
+            "address": "Equator Bayani Road, Taguig",
+            "date_created": "2014_06_29_20_03_55_809",
+            "date_modified": "2014_06_29_21_00_09_551",
+            "desc": "Equator Bayani Road, Taguig",
+            "franchise_id": "53b07e2d67b1d6421300007d",
+            "image": "files/franchises/logo_big/2014_06_29_20_59_25_711.jpg",
+            "key_status": "",
+            "latitude": "14.526147",
+            "longitude": "121.043100",
+            "name": "Equator",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53f9a3672bf734551600000f",
+        "station_id": {
+            "name": "Gasgas Base 7",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "address": "Munti Muntin",
+            "longitude": "121.03548109531403",
+            "latitude": "14.395983925116237",
+            "desc": "Munti",
+            "rating": "5",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "_id": "53f9a3672bf734551600000f",
+            "key_status": "",
+            "date_created": "2014_08_24_08_33_43_335",
+            "date_modified": "2014_08_24_08_33_43_336",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a3200667b1d6421300001b",
+        "station_id": {
+            "_id": "53a3200667b1d6421300001b",
+            "address": "Bangkal, Makati, Philippines",
+            "date_created": "2014_06_19_17_38_14_598",
+            "date_modified": "2014_06_27_22_45_18_178",
+            "desc": "Near DMCI",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "key_status": "",
+            "latitude": "14.54177685876723",
+            "longitude": "121.01567029953003",
+            "name": "PTT",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "54270495fbb5ffb720000006",
+        "station_id": {
+            "_id": "54270495fbb5ffb720000006",
+            "address": "Kristong Hari, Quezon City, Metro Manila, Philippines",
+            "date_created": "2014_09_27_18_40_21_762",
+            "date_modified": "2014_10_05_14_57_45_153",
+            "desc": "Shell in front of Petron along Tomas Morato",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_29_20_59_25_711.jpg",
+            "key_status": "",
+            "latitude": "14.624590",
+            "longitude": "121.032981",
+            "name": "Shell Tomas Morato",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ee2bf167b1d6421300014c",
+        "station_id": {
+            "_id": "53ee2bf167b1d6421300014c",
+            "address": "North Fairview, Quezon City, Philippines",
+            "date_created": "2014_08_15_15_49_05_945",
+            "date_modified": "2014_08_27_20_18_10_904",
+            "desc": "besides Atherton Street ",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.708628668103914",
+            "longitude": "121.06221199035645",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ee2d5767b1d6421300014e",
+        "station_id": {
+            "_id": "53ee2d5767b1d6421300014e",
+            "address": "Fairview, Quezon City, Philippines",
+            "date_created": "2014_08_15_15_55_03_950",
+            "date_modified": "2014_08_15_17_05_19_973",
+            "desc": "Besides Mercury Drug Corporation Fairview",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.704502430334026",
+            "longitude": "121.0810002497783",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ede12067b1d64213000148",
+        "station_id": {
+            "_id": "53ede12067b1d64213000148",
+            "address": "Fairview, Quezon City, Philippines",
+            "date_created": "2014_08_15_10_29_52_972",
+            "date_modified": "2014_08_27_20_22_03_001",
+            "desc": "besides Jollibee near Fairview Center Mall",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.70622632219911",
+            "longitude": "121.0701996088028",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a98dcf67b1d64213000030",
+        "station_id": {
+            "_id": "53a98dcf67b1d64213000030",
+            "address": "Bagumbayan, Quezon City, Philippines",
+            "date_created": "2014_06_24_14_40_15_983",
+            "date_modified": "2014_06_27_15_35_14_452",
+            "desc": "Petron near Eastwood",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.606249729592715",
+            "longitude": "121.07912987001555",
+            "name": "Petron Eastwood",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ff8a642bf734551600011c",
+        "station_id": {
+            "_id": "53ff8a642bf734551600011c",
+            "address": "Makati",
+            "date_created": "2014_08_28_20_00_36_420",
+            "date_modified": "2014_08_28_23_41_11_823",
+            "desc": "Makati",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.539533",
+            "longitude": "121.021744",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5393397ce2e2b2be48000028",
+        "station_id": {
+            "_id": "5393397ce2e2b2be48000028",
+            "address": "balete",
+            "date_created": "2014_06_07_16_10_36_662",
+            "date_modified": "2014_06_11_15_20_40_046",
+            "desc": "Petron Balete Corner Aurora",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.616605",
+            "longitude": "121.039616",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539ab31ae2e2b2be48000082",
+        "station_id": {
+            "_id": "539ab31ae2e2b2be48000082",
+            "address": "Edsa Balintawak",
+            "date_created": "2014_06_13_08_15_22_316",
+            "date_modified": "2014_06_18_23_45_20_870",
+            "desc": "across balintawak market",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.657427",
+            "longitude": "121.005994",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a96cd967b1d6421300002c",
+        "station_id": null
+    },
+    {
+        "_id": "53e68ef667b1d64213000137",
+        "station_id": null
+    },
+    {
+        "_id": "539de1ffe2e2b2be4800010b",
+        "station_id": {
+            "_id": "539de1ffe2e2b2be4800010b",
+            "address": "Libtong, Meycauayan City, Philippines",
+            "date_created": "2014_06_15_18_12_15_487",
+            "date_modified": "2014_06_18_23_58_50_781",
+            "desc": "after Valenzuela exit ",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.74168288351277",
+            "longitude": "120.97588777542114",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539ab5f1e2e2b2be48000083",
+        "station_id": {
+            "_id": "539ab5f1e2e2b2be48000083",
+            "address": "Nlex after Valenzuela ",
+            "date_created": "2014_06_13_08_27_29_693",
+            "date_modified": "2014_06_18_23_44_29_615",
+            "desc": "Nlex Stopover ",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.676991",
+            "longitude": "121.000578",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ee2c8b67b1d6421300014d",
+        "station_id": {
+            "_id": "53ee2c8b67b1d6421300014d",
+            "address": "North Fairview, Quezon City, Philippines",
+            "date_created": "2014_08_15_15_51_39_538",
+            "date_modified": "2014_08_27_20_16_16_533",
+            "desc": "near intersection ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.709578184140732",
+            "longitude": "121.06148779392242",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53c2a85767b1d642130000b9",
+        "station_id": {
+            "_id": "53c2a85767b1d642130000b9",
+            "address": "Dasmariñas, Makati, Philippines",
+            "date_created": "2014_07_13_15_40_07_268",
+            "date_modified": "2014_07_21_22_06_35_074",
+            "desc": "Dasmarinas ",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.547618420435507",
+            "longitude": "121.02668881416321",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539a12d6e2e2b2be4800007d",
+        "station_id": {
+            "_id": "539a12d6e2e2b2be4800007d",
+            "address": "Laging Handa, Quezon City, Philippines",
+            "date_created": "2014_06_12_20_51_34_350",
+            "date_modified": "2014_06_18_23_53_39_362",
+            "desc": "besides Yellow Cab",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.634641946212675",
+            "longitude": "121.03489637374878",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a3014067b1d64213000012",
+        "station_id": {
+            "_id": "53a3014067b1d64213000012",
+            "address": "R-9, Valenzuela City, Philippines",
+            "date_created": "2014_06_19_15_26_56_242",
+            "date_modified": "2014_07_15_12_56_19_097",
+            "desc": "near Valenzuela City Hall",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.69292213983678",
+            "longitude": "120.96836149692535",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53b3298867b1d6421300008d",
+        "station_id": {
+            "_id": "53b3298867b1d6421300008d",
+            "address": "N. Domingo cor Lt. Artiaga St., Brgy. Corazon de Jesus, San Juan City",
+            "date_created": "2014_07_01_21_35_04_449",
+            "date_modified": "2014_07_15_12_53_55_162",
+            "desc": "N. Domingo cor Lt. Artiaga St.",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.608169",
+            "longitude": "121.030717",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399c18de2e2b2be48000074",
+        "station_id": {
+            "_id": "5399c18de2e2b2be48000074",
+            "address": "e rod",
+            "date_created": "2014_06_12_15_04_45_956",
+            "date_modified": "2014_06_12_16_52_41_935",
+            "desc": "Caltex in E Rodriguez",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.622950",
+            "longitude": "121.028218",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ac5bec67b1d64213000039",
+        "station_id": {
+            "_id": "53ac5bec67b1d64213000039",
+            "address": "ayala ave edsa",
+            "date_created": "2014_06_26_17_44_12_490",
+            "date_modified": "2014_06_26_19_51_26_061",
+            "desc": "Ayala Ave. Edsa",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.550206",
+            "longitude": "121.029786",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5398ac0ee2e2b2be4800005f",
+        "station_id": {
+            "_id": "5398ac0ee2e2b2be4800005f",
+            "address": "Putatan, Muntinlupa, Philippines",
+            "date_created": "2014_06_11_19_20_46_100",
+            "date_modified": "2014_08_26_06_25_49_505",
+            "desc": "Gasgas Base 1",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "station_of_the_month",
+            "latitude": "14.396950375019516",
+            "longitude": "121.03372156620026",
+            "name": "Gasgas Base 1 ",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53b03e7967b1d64213000067",
+        "station_id": {
+            "_id": "53b03e7967b1d64213000067",
+            "address": "Chino Rocess Ave, Mola St.",
+            "date_created": "2014_06_29_16_27_37_354",
+            "date_modified": "2014_06_29_17_23_00_087",
+            "desc": "Shell Chino Rocess Ave, Mola St.",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.567225",
+            "longitude": "121.013144",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a303cc67b1d64213000013",
+        "station_id": {
+            "_id": "53a303cc67b1d64213000013",
+            "address": "Marulas, Valenzuela City, Philippines",
+            "date_created": "2014_06_19_15_37_48_764",
+            "date_modified": "2014_06_27_22_57_29_429",
+            "desc": "Near Fatima ",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.678548146392496",
+            "longitude": "120.97976088523865",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a31d7a67b1d64213000018",
+        "station_id": {
+            "_id": "53a31d7a67b1d64213000018",
+            "address": "Brgy. 701, Manila, Philippines",
+            "date_created": "2014_06_19_17_27_22_947",
+            "date_modified": "2014_06_27_22_51_52_436",
+            "desc": "Besides Jollibee",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.565521194919018",
+            "longitude": "120.98724961280823",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539f813be2e2b2be4800010c",
+        "station_id": {
+            "_id": "539f813be2e2b2be4800010c",
+            "address": "Penaranda, Philippines",
+            "date_created": "2014_06_16_23_43_55_103",
+            "date_modified": "2014_06_24_21_28_10_015",
+            "desc": "test",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "15.333634983413596",
+            "longitude": "121.01513385772705",
+            "name": "test ",
+            "rating": "5",
+            "row_status": "1"
+        }
+    },
+    {
+        "_id": "539ab966e2e2b2be48000084",
+        "station_id": {
+            "_id": "539ab966e2e2b2be48000084",
+            "address": "Balagtas, Philippines",
+            "date_created": "2014_06_13_08_42_14_002",
+            "date_modified": "2014_06_14_15_13_12_130",
+            "desc": "Shell Nlex Kenny Rogers and Shell",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.830530755033456",
+            "longitude": "120.90901672372866",
+            "name": "Shell Nlex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ad728067b1d64213000048",
+        "station_id": {
+            "_id": "53ad728067b1d64213000048",
+            "address": "Highway Hills, Mandaluyong, Philippines",
+            "date_created": "2014_06_27_13_32_48_040",
+            "date_modified": "2014_06_27_22_35_22_306",
+            "desc": "After vrp medical center",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.577659778444017",
+            "longitude": "121.05065703392029",
+            "name": "shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53b074ee67b1d64213000072",
+        "station_id": {
+            "_id": "53b074ee67b1d64213000072",
+            "address": "Shell Carlos P. Garcia",
+            "date_created": "2014_06_29_20_19_58_154",
+            "date_modified": "2014_07_21_22_06_17_115",
+            "desc": "Shell Carlos P. Garcia",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.540793",
+            "longitude": "121.055642",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ee2ba867b1d6421300014b",
+        "station_id": {
+            "_id": "53ee2ba867b1d6421300014b",
+            "address": "North Fairview, Quezon City, Philippines",
+            "date_created": "2014_08_15_15_47_52_998",
+            "date_modified": "2014_08_27_20_28_08_790",
+            "desc": "Intersection of Regalado Highway and Commonwealth",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.710797501954653",
+            "longitude": "121.0608172416687",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539372ade2e2b2be4800002a",
+        "station_id": {
+            "_id": "539372ade2e2b2be4800002a",
+            "address": "Edsa Greenhills",
+            "date_created": "2014_06_07_20_14_37_275",
+            "date_modified": "2014_06_12_19_58_08_491",
+            "desc": "corner annapolis",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.601211",
+            "longitude": "121.059156",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a4521a67b1d6421300001c",
+        "station_id": {
+            "_id": "53a4521a67b1d6421300001c",
+            "address": "Congressional Avenue",
+            "date_created": "2014_06_20_15_24_10_634",
+            "date_modified": "2014_06_27_22_39_13_118",
+            "desc": "Besides S&R",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.660320",
+            "longitude": "121.019891",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53933582e2e2b2be48000025",
+        "station_id": {
+            "_id": "53933582e2e2b2be48000025",
+            "address": "Edsa Kamuning",
+            "date_created": "2014_06_07_15_53_38_378",
+            "date_modified": "2014_06_18_23_55_49_270",
+            "desc": "corner Timog Ave near GMA",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.632805",
+            "longitude": "121.044529",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a2b21667b1d64213000004",
+        "station_id": {
+            "_id": "53a2b21667b1d64213000004",
+            "address": "MacArthur Highway",
+            "date_created": "2014_06_19_09_49_10_252",
+            "date_modified": "2014_06_19_10_51_35_106",
+            "desc": "Malabon ",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.659847",
+            "longitude": "120.984068",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a4748967b1d6421300001d",
+        "station_id": {
+            "_id": "53a4748967b1d6421300001d",
+            "address": "Bahay Toro, Quezon City, Philippines",
+            "date_created": "2014_06_20_17_51_05_903",
+            "date_modified": "2014_06_25_15_50_05_373",
+            "desc": "Petron Fuel Station beside Senatorial Drive",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.66568114265897",
+            "longitude": "121.02998174259938",
+            "name": "Petron Near Senatorial Drive",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53998a3ae2e2b2be48000065",
+        "station_id": {
+            "_id": "53998a3ae2e2b2be48000065",
+            "address": "Del Monte, Quezon City ",
+            "date_created": "2014_06_12_11_08_42_478",
+            "date_modified": "2014_06_12_19_51_54_921",
+            "desc": "besides Talayan Del Monte gate",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.639652",
+            "longitude": "121.011384",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399a84ee2e2b2be48000068",
+        "station_id": {
+            "_id": "5399a84ee2e2b2be48000068",
+            "address": "Nayong Kanluran, Quezon City, Philippines",
+            "date_created": "2014_06_12_13_17_02_973",
+            "date_modified": "2014_07_15_13_07_26_123",
+            "desc": "Corner Del Monte ",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.642282049600835",
+            "longitude": "121.02671027183533",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53958015e2e2b2be4800003c",
+        "station_id": {
+            "_id": "53958015e2e2b2be4800003c",
+            "address": "Katipunan",
+            "date_created": "2014_06_09_09_36_21_980",
+            "date_modified": "2014_06_09_19_25_53_789",
+            "desc": "Shell Katipunan in Front of Ateneo",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.646336",
+            "longitude": "121.074354",
+            "name": "Shell Katipunan",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ac605467b1d6421300003b",
+        "station_id": {
+            "_id": "53ac605467b1d6421300003b",
+            "address": "edsa",
+            "date_created": "2014_06_26_18_03_00_770",
+            "date_modified": "2014_06_27_15_30_54_486",
+            "desc": "Caltex, Edsa",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.557677",
+            "longitude": "121.037949",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ac5fec67b1d6421300003a",
+        "station_id": {
+            "_id": "53ac5fec67b1d6421300003a",
+            "address": "Edsa near Kalayaan Flyover",
+            "date_created": "2014_06_26_18_01_16_379",
+            "date_modified": "2014_06_26_19_50_51_772",
+            "desc": "Petron, Edsa",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "latitude": "14.557677",
+            "longitude": "121.037949",
+            "name": "Petron",
+            "rating": "5",
+            "key_status": "",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53ad72b867b1d64213000049",
+        "station_id": {
+            "_id": "53ad72b867b1d64213000049",
+            "address": "Highway Hills, Mandaluyong, Philippines",
+            "date_created": "2014_06_27_13_33_44_050",
+            "date_modified": "2014_06_27_22_49_22_744",
+            "desc": "Besides GA tower",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "key_status": "",
+            "latitude": "14.57497564111414",
+            "longitude": "121.04861319065094",
+            "name": "Total",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a2b46d67b1d6421300000a",
+        "station_id": {
+            "_id": "53a2b46d67b1d6421300000a",
+            "address": "MacArthur SM Valenzuela",
+            "date_created": "2014_06_19_09_59_09_087",
+            "date_modified": "2014_06_19_10_47_39_018",
+            "desc": "besides SM Valenzuela ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.686295",
+            "longitude": "120.976144",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5398230fe2e2b2be4800004b",
+        "station_id": {
+            "_id": "5398230fe2e2b2be4800004b",
+            "address": "Edsa Main Avenue,Quezon City",
+            "date_created": "2014_06_11_09_36_15_944",
+            "date_modified": "2014_06_11_16_01_57_697",
+            "desc": "Edsa Main Avenue, Quezon City",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.616748",
+            "longitude": "121.052412",
+            "name": "Shell ",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399899ae2e2b2be48000064",
+        "station_id": {
+            "_id": "5399899ae2e2b2be48000064",
+            "address": "Roosevelt, Quezon CIty",
+            "date_created": "2014_06_12_11_06_02_687",
+            "date_modified": "2014_06_12_19_52_44_724",
+            "desc": "corner Baler Street ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.643651",
+            "longitude": "121.015269",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539f863ce2e2b2be48000118",
+        "station_id": {
+            "_id": "539f863ce2e2b2be48000118",
+            "address": "APC buses, Manila, Philippines",
+            "date_created": "2014_06_17_00_05_16_186",
+            "date_modified": "2014_06_24_21_27_50_687",
+            "desc": "test3",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.538611100394032",
+            "longitude": "121.0151528113056",
+            "name": "test3",
+            "rating": "5",
+            "row_status": "1"
+        }
+    },
+    {
+        "_id": "53b530d167b1d64213000094",
+        "station_id": {
+            "_id": "53b530d167b1d64213000094",
+            "address": "Makati Ave, Jupiter",
+            "date_created": "2014_07_03_10_30_41_129",
+            "date_modified": "2014_07_03_11_26_42_601",
+            "desc": "Petron - Makati Ave, Jupiter",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.561991",
+            "longitude": "121.027984",
+            "name": "Petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53a3047767b1d64213000014",
+        "station_id": {
+            "_id": "53a3047767b1d64213000014",
+            "address": "R-9, Valenzuela City, Philippines",
+            "date_created": "2014_06_19_15_40_39_190",
+            "date_modified": "2014_07_15_12_55_05_503",
+            "desc": "near Victoria Court ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.674199438029977",
+            "longitude": "120.98187446594238",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539882e6e2e2b2be4800005d",
+        "station_id": {
+            "_id": "539882e6e2e2b2be4800005d",
+            "address": "North Fairview, Quezon City, Philippines",
+            "date_created": "2014_06_11_16_25_10_844",
+            "date_modified": "2014_07_15_13_06_38_846",
+            "desc": "Fairview ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.709630070143929",
+            "longitude": "121.06148779392242",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539ab06be2e2b2be48000080",
+        "station_id": {
+            "_id": "539ab06be2e2b2be48000080",
+            "address": "Edsa after Connecticut Street ",
+            "date_created": "2014_06_13_08_03_55_545",
+            "date_modified": "2014_06_18_23_47_55_909",
+            "desc": "near Saisaki ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.599252",
+            "longitude": "121.059635",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539333f2e2e2b2be48000021",
+        "station_id": {
+            "_id": "539333f2e2e2b2be48000021",
+            "address": "Edsa quezon avenue",
+            "date_created": "2014_06_07_15_46_58_774",
+            "date_modified": "2014_06_11_15_22_26_427",
+            "desc": "Shell station in EDSA Quezon Avenue",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.643228",
+            "longitude": "121.038402",
+            "name": "Shell Edsa ",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539f8486e2e2b2be48000110",
+        "station_id": {
+            "_id": "539f8486e2e2b2be48000110",
+            "address": "San Isidro, Parañaque, Philippines",
+            "date_created": "2014_06_16_23_57_58_875",
+            "date_modified": "2014_06_24_21_28_03_773",
+            "desc": "test 2",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.471361350390898",
+            "longitude": "121.01287074387074",
+            "name": "test 2",
+            "rating": "5",
+            "row_status": "1"
+        }
+    },
+    {
+        "_id": "5399c537e2e2b2be48000079",
+        "station_id": {
+            "_id": "5399c537e2e2b2be48000079",
+            "address": "ortigas santolan",
+            "date_created": "2014_06_12_15_20_23_316",
+            "date_modified": "2014_06_12_16_47_57_477",
+            "desc": "Total Station in Ortigas",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "key_status": "",
+            "latitude": "14.605762",
+            "longitude": "121.041617",
+            "name": "Total",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399c4a1e2e2b2be48000078",
+        "station_id": {
+            "_id": "5399c4a1e2e2b2be48000078",
+            "address": "ortigas corner santolan",
+            "date_created": "2014_06_12_15_17_53_733",
+            "date_modified": "2014_06_12_16_49_03_301",
+            "desc": "intersection of gilmore and ortigas",
+            "franchise_id": "5396074fe2e2b2be48000042",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_20_920.jpg",
+            "key_status": "",
+            "latitude": "14.609082",
+            "longitude": "121.041895",
+            "name": "petron",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5399bb76e2e2b2be4800006b",
+        "station_id": {
+            "_id": "5399bb76e2e2b2be4800006b",
+            "address": "Bungad, Quezon City, Philippines",
+            "date_created": "2014_06_12_14_38_46_338",
+            "date_modified": "2014_06_21_11_34_54_031",
+            "desc": "corner Baler ",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.648094993449078",
+            "longitude": "121.02809429168701",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539334cae2e2b2be48000022",
+        "station_id": {
+            "_id": "539334cae2e2b2be48000022",
+            "address": "Timog corner EDSA ",
+            "date_created": "2014_06_07_15_50_34_311",
+            "date_modified": "2014_06_12_20_02_47_322",
+            "desc": "near GMA ",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.632805",
+            "longitude": "121.044529",
+            "name": "Caltex",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53b06e3d67b1d64213000070",
+        "station_id": {
+            "_id": "53b06e3d67b1d64213000070",
+            "address": "Andrew Ave., Resort Drive NAIA",
+            "date_created": "2014_06_29_19_51_25_075",
+            "date_modified": "2014_06_29_20_53_43_188",
+            "desc": "Andrew Ave., Resort Drive NAIA",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "key_status": "",
+            "latitude": "14.520924",
+            "longitude": "121.015395",
+            "name": "Total",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "5398ac27e2e2b2be48000061",
+        "station_id": {
+            "_id": "5398ac27e2e2b2be48000061",
+            "address": "Putatan, Muntinlupa, Philippines",
+            "date_created": "2014_06_11_19_21_11_462",
+            "date_modified": "2014_06_11_19_21_11_462",
+            "desc": "Gasgas Base 3",
+            "franchise_id": "5396073ce2e2b2be48000041",
+            "image": "files/franchises/logo_big/2014_06_09_19_13_01_363.jpg",
+            "key_status": "",
+            "latitude": "14.396389211069017",
+            "longitude": "121.03433310985565",
+            "name": "Gasgas Base 3",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "53b03d9667b1d64213000066",
+        "station_id": {
+            "_id": "53b03d9667b1d64213000066",
+            "address": "Metropolitan Ave, Makati",
+            "date_created": "2014_06_29_16_23_50_046",
+            "date_modified": "2014_06_29_17_23_42_683",
+            "desc": "Total Metropolitan Ave.",
+            "franchise_id": "5396077fe2e2b2be48000045",
+            "image": "files/franchises/logo_big/2014_06_09_19_14_08_678.jpg",
+            "key_status": "",
+            "latitude": "14.564870",
+            "longitude": "121.015056",
+            "name": "Total",
+            "rating": "5",
+            "row_status": ""
+        }
+    },
+    {
+        "_id": "539ab13fe2e2b2be48000081",
+        "station_id": {
+            "_id": "539ab13fe2e2b2be48000081",
+            "address": "Edsa near Centris",
+            "date_created": "2014_06_13_08_07_27_145",
+            "date_modified": "2014_06_18_23_48_46_947",
+            "desc": "near National Irrigation Administration",
+            "franchise_id": "5392d609e2e2b2be4800001c",
+            "image": "files/franchises/logo_big/2014_06_07_09_06_19_225.jpg",
+            "key_status": "",
+            "latitude": "14.636943",
+            "longitude": "121.042045",
+            "name": "Shell",
+            "rating": "5",
+            "row_status": ""
+        }
+    }
+]
+^C]0;k0ms@resph: ~/gp_apik0ms@resph:~/gp_api$ exit
+Script done on Wednesday, 10 December, 2014 11:50:28 PM PHT

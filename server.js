@@ -14,10 +14,15 @@ require('./schema/stations')();
 require('./schema/userFuelHistory')();
 require('./schema/vehicles')();
 require('./schema/rating')();
+require('./schema/franchises')();
+require('./schema/fuels')();
+require('./schema/franchise_fuels')();
 
 var comments = require('./routes/comments');
 var user_fuel_history = require('./routes/userFuelHistory2');
 var ratings = require('./routes/rating');
+var stationsMongoose = require('./routes/stationsMongoose');
+var fuels = require('./routes/fuels');
 
 var connect = function() {
 	var options = {server: {socketOptions: {keepAlive:1}}};
@@ -62,6 +67,13 @@ app.post('/fuelhistory', userFuelHistory.addFuelHistory)
 app.get('/rating/:id', ratings.getStationRating);
 app.get('/rating/', ratings.getUserStationRating);
 app.post('/rating/', ratings.updateUserRating);
+
+app.get('/stationsMongoose/', stationsMongoose.findAll);
+
+app.get('/fuels/', fuels.findAll);
+app.get('/fuels/:id', fuels.findById);
+
+app.get('/fueltype/', fuels.findFuelTypeDistinct);
 
 app.listen(port);
 console.log('Listening on port 8080...');

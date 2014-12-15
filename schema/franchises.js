@@ -4,36 +4,29 @@ var Schema = mongoose.Schema;
 
 module.exports = function() {
 
-	var stationsSchema = new Schema({
+	var franchisesSchema = new Schema({
 		_id: String,
-		address: String,
-		desc: String,
-		franchise_id: {type: String, ref: 'franchises'},
-		image: String,
-		key_status: String,
-		rating: String,
-		latitude: String,
-		longitude: String,
-		name: String,
-		date_created: String                                                                  ,
-		date_modified: String,
-		row_status: {type: String, default: formatDate()},
+		logo_big: String,
+        logo_small: String,
+        name: String,
+		date_created: {type: String, default: formatDate()} ,
+		date_modified: {type: String, default: formatDate()},
+		row_status: String
 	});
 
     //userssSchema.path('comments').required(true, 'Comment cannot be blank');
 
 
-    stationsSchema.statics = {
+    franchisesSchema.statics = {
     	list: function(options, cb) {
     		var criteria = options.criteria || {};
 
     		this.find(options)
-            .populate('franchise_id', 'name')
     		.exec(cb);
     	} 
     };
 
-	mongoose.model('stations', stationsSchema, 'stations');
+	mongoose.model('franchises', franchisesSchema, 'franchises');
 
 };
 

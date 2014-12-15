@@ -82,7 +82,7 @@ exports.findById = function (req, res){
           console.log("RESULTS: "+result);
           res.send({
             msg: "OK",
-            data: "result"
+            data: result
           });
       }
 

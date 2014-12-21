@@ -11,8 +11,8 @@ module.exports = function() {
 		station_id: {type: String, ref: 'stations'},
 		franchise_id: { type: String, ref: 'franchcises'},
 		comments: String,
-		date_created: {type: String, default: formatDate()},
-		date_modified: {type: String, default: formatDate()},
+		date_created: String,
+		date_modified: String,
 		row_status: {type: String, default: ''},
 	});
 
@@ -22,10 +22,10 @@ module.exports = function() {
     commentsSchema.path('user_id').required(true, 'User ID cannot be blank');
 
     commentsSchema.statics = {
-    	list: function(options, cb) {
+    	list: function(query, options, cb) {
     		var criteria = options.criteria || {};
 
-    		this.find({},{},options)
+    		this.find(query,{},options)
     		.populate('user_id', 'firstname lastname')
     		.populate('station_id', 'name rating')
     		.sort({'date_modified': -1})

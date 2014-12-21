@@ -6,17 +6,18 @@ var comments = mongoose.model('comments');
 
 exports.index = function (req, res){
   var station = req.param('station_id');
-  var page = req.param('page');
-  var perPage = req.param('perPage');
+
   var options = {
       sort: {date_modified: -1}
   }
   
   if(page != undefined || perPage != undefined ) {
       options['skip'] = page * perPage;
-      options['limit'] = page;
-  };  
-  comments.list(options, function (err, articles) {
+      options['limit'] = perPage;
+      console.log(options);
+  };
+  var query = {};  
+  comments.list(query, options, function (err, articles) {
     if (err)  res.send({'msg': 'NG', 'data': []});
     comments.count().exec(function (err, count) {
       res.send({
@@ -30,17 +31,27 @@ exports.index = function (req, res){
 };
 
 exports.findById = function (req, res){
-  var station = req.param('station_id');
-  var page = (req.param('page') > 0 ? req.param('page') : 1) - 1;
-  var perPage = 30;
+  var station = req.params.id
+  var page = req.param('page');
+  var perPage = req.param('perPage');
   var options = {
     perPage: perPage,
     page: page,
-    station_id: station,
     sort: {date_modified: -1}
   };
 
-  comments.list(options, function (err, articles) {
+  var options = {
+      sort: {date_modified: -1}
+  }
+  var query =  {station_id: station};
+  
+  if(page != undefined || perPage != undefined ) {
+      options['skip'] = page * perPage;
+      options['limit'] = perPage;
+      console.log(options);
+  };
+
+  comments.list(query, options, function (err, articles) {
     if (err)  res.send({'msg': 'NG', 'data': []});
     comments.count().exec(function (err, count) {
       res.send({
@@ -58,7 +69,16 @@ exports.addComments = function (req, res){
   comments.on('error', console.log);
   console.log(JSON.stringify(req.body));
   comms._id = mongoose.Types.ObjectId()+'';
-  
+
+  var dateNow =  formatDate();
+  if(comms.date_modified === undefined) {
+      comms['date_modified'] = dateNow;
+  }
+  if(comms.date_created === undefined) {
+      comms['date_created'] = dateNow;
+  }
+
+  if(req.body)
   var insComment = new comments(req.body);
   insComment.save(function(err, comm, numAffected) {  
     if (err) {

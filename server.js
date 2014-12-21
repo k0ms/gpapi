@@ -36,10 +36,12 @@ mongoose.connection.on('disconnected', connect);
 app.use(multer({dest:'./uploads'}));
 
 app.use(bodyParser.json());
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3003;
 
 app.get('/comments', comments.index);
 app.post('/comments', comments.addComments);
+app.get('/comments/:id', comments.findById);
+
 app.get('/user_fuel_history', user_fuel_history.index);
 
 app.get('/users', users.findAll);

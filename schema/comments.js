@@ -25,7 +25,7 @@ module.exports = function() {
     	list: function(options, cb) {
     		var criteria = options.criteria || {};
 
-    		this.find(options)
+    		this.find({},{},options)
     		.populate('user_id', 'firstname lastname')
     		.populate('station_id', 'name rating')
     		.sort({'date_modified': -1})

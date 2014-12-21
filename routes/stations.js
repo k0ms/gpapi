@@ -131,11 +131,11 @@ function formatDate() {
 
 
 exports.addStation = function(req, res){
-
+    if(req.files != undefined)
 	console.log(req.files);
-	console.log(req.body.sample);
+	console.log(req.body);
     var file = req.files.file;
-    //console.log('uploads/'+file.name);
+    console.log('uploads/'+file.name);
     responseMsg.msg = "OK";
     responseMsg.data = req.body;
     res.send(responseMsg);

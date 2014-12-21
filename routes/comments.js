@@ -6,11 +6,38 @@ var comments = mongoose.model('comments');
 
 exports.index = function (req, res){
   var station = req.param('station_id');
+  var page = req.param('page');
+  var perPage = req.param('perPage');
+  var options = {
+      sort: {date_modified: -1}
+  }
+  
+  if(page != undefined || perPage != undefined ) {
+      options['skip'] = page * perPage;
+      options['limit'] = page;
+  };  
+  comments.list(options, function (err, articles) {
+    if (err)  res.send({'msg': 'NG', 'data': []});
+    comments.count().exec(function (err, count) {
+      res.send({
+        'msg': 'OK',
+        'data': articles,
+        'page': page + 1,
+        'pages': Math.ceil(count / perPage)
+      });
+    });
+  });
+};
+
+exports.findById = function (req, res){
+  var station = req.param('station_id');
   var page = (req.param('page') > 0 ? req.param('page') : 1) - 1;
   var perPage = 30;
   var options = {
-    //perPage: perPage,
-    //page: page
+    perPage: perPage,
+    page: page,
+    station_id: station,
+    sort: {date_modified: -1}
   };
 
   comments.list(options, function (err, articles) {
@@ -25,8 +52,6 @@ exports.index = function (req, res){
     });
   });
 };
-
-
 
 exports.addComments = function (req, res){
   var comms = req.body;

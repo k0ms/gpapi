@@ -10,7 +10,9 @@ exports.index = function (req, res){
   var options = {
       sort: {date_modified: -1}
   }
-  
+  var page = req.param('page');
+  var perPage = req.param('perPage');
+    
   if(page != undefined || perPage != undefined ) {
       options['skip'] = page * perPage;
       options['limit'] = perPage;

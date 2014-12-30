@@ -69,6 +69,8 @@ exports.disapprovePrice = function(req, res) {
               item.on('error', console.log);
               item.log(JSON.stringify(req.body));
               item._id = mongoose.Types.ObjectId()+'';
+              item.isApproved = false;
+              item.isNew = true;
 
               var dateNow =  formatDate();
               if(item.date_modified === undefined) {
@@ -105,6 +107,18 @@ exports.disapprovePrice = function(req, res) {
 exports.submitPrice = function(req, res) {
 
   var item = new fuelsApproval(req.body);
+  item._id = mongoose.Types.ObjectId()+'';
+  item.isApproved = false;
+  item.isNew = true;
+  
+  var dateNow =  formatDate();
+  if(item.date_modified === undefined) {
+      item['date_modified'] = dateNow;
+  }
+  if(item.date_created === undefined) {
+      item['date_created'] = dateNow;
+  }
+
   item.save(function(err, comm, numAffected) {  
     if (err) {
       console.log(err);  

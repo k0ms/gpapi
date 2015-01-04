@@ -25,5 +25,5 @@ module.exports = function() {
     	}
     };
 
-	mongoose.model('user_fuel_history', userFuelHistorySchema);
+	mongoose.model('user_fuel_history', userFuelHistorySchema, 'user_fuel_history');
 };

@@ -44,7 +44,7 @@ app.get('/comments', comments.index);
 app.post('/comments', comments.addComments);
 app.get('/comments/:id', comments.findById);
 
-app.get('/user_fuel_history', user_fuel_history.index);
+app.get('/user_fuel_history', user_fuel_history.userVehicles);
 
 app.get('/users', users.findAll);
 app.get('/users/:id', users.findById);

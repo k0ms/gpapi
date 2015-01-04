@@ -17,27 +17,111 @@ exports.index = function (req, res){
     if (err)  res.send({'msg': 'NG', 'data': []});
     else {
       var itr = 0;
-      for(itr = 0; itr < vehicleList.length; itr++) {        
-        userFuelHistory.list({vehicle_id: vehicleList.vehicle_id}, function(err, historyList){
+      var vehicleHistory;
+
+      for(itr = 0; itr < vehicleList.length; itr++) {
+
+        console.log(itr);
+     
+        userFuelHistory.list({vehicle_id: vehicleList.vehicle_id}, function(err, historyList, vehicleHistory){
             if(err) res.send({'msg': 'NG', 'data': []});
             else {
-                var vehicle = vehicleList[itr];
-                console.log(JSON.stringify(vehicleList[itr]));
-                vehicle['history'] = historyList;
-                vehicleList[itr] = vehicle;
+                console.log(historyList);
+                vehicleHistory = historyList;
+//                var vehicle = vehicleList[itr];
+//                console.log(JSON.stringify(vehicleList[itr]));
+//                vehicle['history'] = historyList;
+                
             }
         });
+
+        if(itr === vehicleList.length) {
+          res.send({
+            'msg': 'OK',
+            'data': vehicleList,
+          });
+        }
       }
 
-      res.send({
-        'msg': 'OK',
-        'data': vehicleList,
-      });
+      
     }
 
   });
 };
 
+exports.userVehicles = function(req, res) {
+  var userId = req.param('user_id');
+  var options = {
+    user_id : userId 
+  }
+
+  vehicles.list(options, function (err, vehicleList) {
+    var fuelHistoryOptions = {$or: []};
+    if (err)  res.send({'msg': 'NG', 'data': [err]});
+    else {
+        for(var count = 0; count < vehicleList.length; count++) {
+            fuelHistoryOptions['$or'].push({vehicle_id: vehicleList[count]._id});
+        }
+
+        var options = [
+              {
+                  $match: fuelHistoryOptions
+              }, 
+              {
+                  $group: 
+                  {
+                      _id: "$vehicle_id", 
+                      logs: 
+                      {
+                          $push: 
+                          {
+                            vehicle_id: "$vehicle_id", 
+                            station_id: "$station_id", 
+                            fuel_id: "$fuel_id", 
+                            liters: "$liters", 
+                            amount: "$amount",
+                            user_id: "$user_id", 
+                            _id: "$_id", 
+                            date_created: "$date_created", 
+                            date_modified: "$date_modified", 
+                            row_status: "$row_status"
+                          } 
+                      }
+                  }
+              }
+            ];
+
+        userFuelHistory.aggregate( options,
+          function(err, result) {
+            if(err)  {
+              res.send({'msg': 'NG', 'data': [err]});
+            }
+            else {
+              console.log('before '+JSON.stringify(result));
+              result2 = result.map(function(doc) {
+                  doc['vehicle_id'] = doc._id;
+                  delete doc._id;
+                  return doc; 
+              });
+
+              vehicles.populate( result2, {"path": "vehicle_id logs"}, function(err,results) {
+                if(err) {
+                  res.send({'msg': 'NG', 'data': [err]});
+                }
+                else {
+                  res.send({
+                    'msg': 'OK',
+                    'data': results,
+                  });
+                }
+              });
+            }
+          }
+        );      
+
+    }
+  });
+}
 
 //local methods
 function formatDate() {

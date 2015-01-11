@@ -22,7 +22,7 @@ exports.addFuelHistory = function(req, res) {
     console.log('Adding fuel history: ' + JSON.stringify(vehicles));
     vehicles._id = new ObjectId().toHexString();
 
-    db.collection('vehicles', function(err, collection) {
+    db.collection('user_fuel_history', function(err, collection) {
         collection.insert(vehicles, {safe:true}, function(err, result) {
             if (err) {
                 responseMsg.msg = "NG";

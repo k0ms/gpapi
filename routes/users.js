@@ -128,7 +128,7 @@ exports.authenticate = function(req, res) {
         else {
             //add user add social
             db.collection('users', function(err, collection) {
-                collection.insert(users, {safe:true}, function(err, result) {
+                collection.insert(user, {safe:true}, function(err, result) {
                     if (err) {
                         res.send({'error':'An error has occurred'});
                     } else {
@@ -139,7 +139,7 @@ exports.authenticate = function(req, res) {
                         responseMsg.msg = "OK";
                         responseMsg.data = result;
                         res.send(responseMsg);
-                    }
+                        }
                 });
             });
         }
@@ -253,5 +253,65 @@ var addUserFunc = function (db, users,res){
                     res.send(responseMsg);
                 }
             });
+    });
+};
+
+exports.changePassword = function (req, res) {
+
+    var user_id = req.body.user_id
+    var old_password = req.body.old_password
+    var new_password = req.body.new_password
+
+    old_password = crypto.createHash('md5').update( JSON.stringify(old_password) ).digest("hex");
+    new_password = crypto.createHash('md5').update( JSON.stringify(new_password) ).digest("hex");
+    console.log("user id = "+user_id);
+    console.log("old password = "+old_password);
+    console.log("new password = "+new_password);    
+
+    db.collection('users', function(err, collection){
+        collection.update({'_id': ""+user_id, password: old_password}, {'$set': {password: new_password}}, {safe:true}, function(err, result) {
+            if(err) {
+                res.send({msg: "NG", data: err});
+            }
+            else {
+                if(result == 0) {
+                    res.send({msg: "OK", data: "no entry found or incorrect password"} );
+                }
+                else {
+                   res.send({msg: "OK", data: result})
+                }
+            }
+        });
+    });
+};
+
+
+
+exports.changeEmail = function (req, res) {
+
+    var user_id = req.body.user_id
+    var password = req.body.password;
+    var new_email = req.body.email;
+
+    password = crypto.createHash('md5').update( JSON.stringify(password) ).digest("hex");
+    
+    console.log("user id = "+user_id);
+    console.log("password = "+password);
+    console.log("new email = "+new_email);    
+
+    db.collection('users', function(err, collection){
+        collection.update({'_id': ""+user_id, password: password}, {'$set': {email: new_email}}, {safe:true}, function(err, result) {
+            if(err) {
+                res.send({msg: "NG", data: err});
+            }
+            else {
+                if(result == 0) {
+                    res.send({msg: "OK", data: "no entry found or incorrect password"} );
+                }
+                else {
+                   res.send({msg: "OK", data: result})
+                }
+            }
+        });
     });
 };

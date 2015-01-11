@@ -84,5 +84,9 @@ app.put('/fuelsApproval/', fuelsApproval.approvePrice);
 app.post('/disapprovePrice/:id', fuelsApproval.disapprovePrice);
 app.post('/submitPrice/',  fuelsApproval.submitPrice);
 
+
+app.post('/changePassword/', users.changePassword);
+app.post('/changeEmail/', users.changeEmail);
+
 app.listen(port);
 console.log('Listening on port 8080...');

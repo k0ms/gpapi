@@ -97,14 +97,35 @@ exports.userVehicles = function(req, res) {
               res.send({'msg': 'NG', 'data': [err]});
             }
             else {
-              console.log('before '+JSON.stringify(result));
               result2 = result.map(function(doc) {
                   doc['vehicle_id'] = doc._id;
                   delete doc._id;
                   return doc; 
               });
+              var forFinal = result2;
+              for(var count = 0; count < vehicleList.length; count++) {
+                var found = false;
 
-              vehicles.populate( result2, {"path": "vehicle_id logs"}, function(err,results) {
+                var vehicleL = vehicleList[count];
+                var resultL = {};
+                for(var count2 = 0; count2 < result2.length; count2++) {
+                  resultL = result2[count2];
+
+                  if(vehicleL._id == resultL.vehicle_id) {
+                    console.log("TRUE");
+                    found = true;
+                    break;
+                  }
+                }
+                if(found == false) {
+                  console.log("vehicle_id add " + vehicleL._id);
+                  forFinal.push({vehicle_id: vehicleL._id});
+                }
+              }
+
+              console.log(forFinal);
+
+              vehicles.populate( forFinal, {"path": "vehicle_id logs"}, function(err,results) {
                 if(err) {
                   res.send({'msg': 'NG', 'data': [err]});
                 }

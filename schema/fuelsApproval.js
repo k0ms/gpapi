@@ -6,10 +6,12 @@ module.exports = function() {
 
 	var fuelApprovalSchema = new Schema({
 		_id: String,
+        station_id: {type: String, ref: 'stations'},
         fuels_id: {type: String, ref: 'fuels'},
         user_id: {type: String, ref: 'users'},
         price: Number,
         isApproved: Boolean,
+        IsNew: Boolean,
         date_created: String,
         date_modified: String, 
 		row_status: {type: String, default: ''},
@@ -21,7 +23,7 @@ module.exports = function() {
 
     fuelApprovalSchema.statics = {
     	list: function(options, cb) {
-    		var criteria = options.criteria || {};
+    		var criteria = options.criteria || {};n 
 
     		this.find(options)
     		.populate('user_id')

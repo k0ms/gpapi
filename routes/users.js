@@ -278,7 +278,7 @@ exports.changePassword = function (req, res) {
                     res.send({msg: "OK", data: "no entry found or incorrect password"} );
                 }
                 else {
-                   res.send({msg: "OK", data: result})
+                   res.send({msg: "OK", data: req.body})
                 }
             }
         });
@@ -309,7 +309,7 @@ exports.changeEmail = function (req, res) {
                     res.send({msg: "OK", data: "no entry found or incorrect password"} );
                 }
                 else {
-                   res.send({msg: "OK", data: result})
+                   res.send({msg: "OK", data: req.body})
                 }
             }
         });

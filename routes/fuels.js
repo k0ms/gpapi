@@ -119,6 +119,25 @@ exports.findFuelTypeDistinct = function(req,res) {
   });
 };
 
+exports.findFuelClassDistinct = function(req,res) {
+  console.log("findFuelTypeDistinct");
+
+  fuels.distinct("type", function(err, result) {
+      if(err) {
+          res.send({
+            msg: "NG",
+            data: err
+          });
+      }
+      else {
+          console.log("RESULTS: "+result);
+          res.send({
+            msg: "OK",
+            data: result
+          });
+      }
+  });
+};
 //local methods
 function formatDate() {
 

@@ -77,6 +77,7 @@ exports.userVehicles = function(req, res) {
                           {
                             vehicle_id: "$vehicle_id", 
                             station_id: "$station_id", 
+                            fuel_consumed: "$fuel_consumed",
                             fuel_id: "$fuel_id", 
                             liters: "$liters", 
                             amount: "$amount",

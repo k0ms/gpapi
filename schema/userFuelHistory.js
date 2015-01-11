@@ -12,6 +12,7 @@ module.exports = function() {
 		date_created: String,
 		date_modified: String,
 		row_status: String,
+		fuel_consumed: String
 	});
 
 

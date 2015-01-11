@@ -55,6 +55,7 @@ exports.addVehicles = function(req, res) {
     console.log('Adding vehicles: ' + JSON.stringify(vehicles));
     vehicles._id = new ObjectId().toHexString();
     vehicles.date_created = formatDate();
+    vehicles.date_modified = formatDate();
 
     db.collection('vehicles', function(err, collection) {
         collection.insert(vehicles, {safe:true}, function(err, result) {
@@ -75,7 +76,7 @@ exports.updateVehicles = function(req, res) {
     var id = req.params.id;
     var vehicles = req.body;
     vehicles.date_modified = formatDate();
-
+    
     console.log('Updating vehicles: ' + id);
     console.log(JSON.stringify(vehicles));
     db.collection('vehicles', function(err, collection) {

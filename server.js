@@ -87,6 +87,6 @@ app.post('/submitPrice/',  fuelsApproval.submitPrice);
 
 app.post('/changePassword/', users.changePassword);
 app.post('/changeEmail/', users.changeEmail);
-
+app.get('/fuelclass/', fuels.findFuelClassDistinct);
 app.listen(port);
 console.log('Listening on port 8080...');
